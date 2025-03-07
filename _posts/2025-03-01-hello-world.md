@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World: Beginning This Journey"
-date: 2025-03-06
+date: 2025-03-01
 ---
 
 This is the beginning of my digital garden. A place where I'll share thoughts, learnings, and explorations.

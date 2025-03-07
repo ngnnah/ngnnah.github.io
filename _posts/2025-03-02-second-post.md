@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Thoughts on Minimalism in the Digital Age"
-date: 2025-03-07
+date: 2025-03-02
 ---
 
 In a world of constant digital noise, I've been thinking about what minimalism means beyond just having fewer physical possessions.
