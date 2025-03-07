@@ -11,12 +11,10 @@ permalink: /updates/
         <p>This is an archive of my past "now" updates, showing what I was focused on at different points in time.</p>
         
         <div class="updates-list">
-            {% for update in site.updates reversed %}
-            <div class="update-item">
-                <p>{{ update.date | date: "%B %Y" }}</p>
-                {{ update.content }}
-                <hr>
-            </div>
+            {% for update in site.data.updates %}
+            <h2>{{ update.title }}</h2>
+            <p>{{ update.date | date: "%B %Y" }}</p>
+            {{ update.content | markdownify }}
             {% endfor %}
         </div>
         

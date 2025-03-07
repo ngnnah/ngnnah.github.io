@@ -20,8 +20,3 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
-# Collections; In Jekyll, posts is a special built-in collection that doesn't need to be explicitly defined in most cases
-collections:
-  updates:
-    output: true
-    permalink: /:collection/:slug/

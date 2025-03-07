@@ -15,18 +15,10 @@ layout: default
     <section id="now" class="section">
         <h2>Me Now</h2>
         <div class="content">
-            {% if site.updates and site.updates.size > 0 %}
-                {% assign latest_now = site.updates | sort: 'date' | last %}
-                <p><strong>{{ latest_now.title }}</strong></p>
-                {{ latest_now.content }}
-                <p class="meta">Updated {{ latest_now.date | date: "%B %-d, %Y" }} · <a href="/updates">See past updates</a></p>
-            {% else %}
-                <p><strong>March 2025:</strong> Living in [Location]. Building [Project/Company]. Learning [New Skill].</p>
-                <p>Reading: [Book Title] by [Author]</p>
-                <p>Working on: [Current focus]</p>
-                <p>Exploring: [New interest]</p>
-                <p class="meta">Updated March 7, 2025 · <a href="/updates">See past updates</a></p>
-            {% endif %}
+            {% assign updates = site.data.updates | sort: 'date' %}
+            {% assign latest_now = updates | last %}
+            <p><strong>{{ latest_now.title }}</strong></p>
+            {{ latest_now.content | markdownify }}
         </div>
     </section>
 
