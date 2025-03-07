@@ -1,0 +1,26 @@
+# Site settings
+title: ngnnah
+email: your-email@example.com
+description: >-
+  A personal blog about technology, software development, and personal growth.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ngnnah.github.io" # the base hostname & protocol for your site
+github_username: ngnnah
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path/
