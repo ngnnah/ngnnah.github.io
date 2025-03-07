@@ -19,6 +19,7 @@ layout: default
             {% assign latest_now = updates | last %}
             <p><strong>{{ latest_now.title }}</strong></p>
             {{ latest_now.content | markdownify }}
+            <a href="/updates">See past updates</a></p>
         </div>
     </section>
 
