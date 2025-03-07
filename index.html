@@ -14,54 +14,16 @@ layout: default
 
     <section id="now" class="section">
         <h2>Me Now</h2>
-        <div class="content now-content">
+        <div class="content">
             {% assign updates = site.data.updates | sort: 'date' %}
             {% assign latest_now = updates | last %}
             
-            <h3 class="now-title">{{ latest_now.title }}</h3>
+            {% if latest_now.title %}
+            <h3 class="now-headline">{{ latest_now.title }}</h3>
+            {% endif %}
             
-            <div class="now-grid">
-                {% if latest_now.content contains "**Location**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Location</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Location**:" | split: "**Working on**:" | first }}</div>
-                    </div>
-                {% endif %}
-                
-                {% if latest_now.content contains "**Working on**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Working on</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Working on**:" | split: "**Learning**:" | first }}</div>
-                    </div>
-                {% endif %}
-                
-                {% if latest_now.content contains "**Learning**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Learning</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Learning**:" | split: "**Reading**:" | first }}</div>
-                    </div>
-                {% endif %}
-                
-                {% if latest_now.content contains "**Reading**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Reading</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Reading**:" | split: "**Exploring**:" | first }}</div>
-                    </div>
-                {% endif %}
-                
-                {% if latest_now.content contains "**Exploring**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Exploring</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Exploring**:" | split: "**Health focus**:" | first }}</div>
-                    </div>
-                {% endif %}
-                
-                {% if latest_now.content contains "**Health focus**:" %}
-                    <div class="now-item">
-                        <span class="now-label">Health focus</span>
-                        <div class="now-detail">{{ latest_now.content | markdownify | remove: "**Health focus**:" | split: "**" | first }}</div>
-                    </div>
-                {% endif %}
+            <div class="now-content">
+                {{ latest_now.content | markdownify }}
             </div>
             
             <p class="meta">Updated {{ latest_now.date | date: "%B %-d, %Y" }} · <a href="/updates">See past updates</a></p>
@@ -71,12 +33,12 @@ layout: default
     <section id="articles" class="section">
         <h2>Newest Articles</h2>
         <div class="content">
-            <div class="article-list">
+            <div class="post-list">
                 {% for post in site.posts %}
-                <a href="{{ post.url | relative_url }}" class="article-item">
-                    <span class="article-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                    <h3 class="article-title">{{ post.title }}</h3>
-                </a>
+                <div class="post-item">
+                    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                    <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
+                </div>
                 {% endfor %}
             </div>
         </div>

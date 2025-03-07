@@ -129,51 +129,59 @@ nav a {
 }
 
 .now-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
+    line-height: 1.6;
 }
 
-.now-group {
-    margin-bottom: 0.5rem;
+.now-content h2 {
+    font-size: 1.2rem; 
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: none;
+    display: block;
 }
 
-.now-label {
-    display: inline-block;
+.now-content h2:first-child {
+    margin-top: 0;
+}
+
+.now-content strong {
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--accent-color);
-    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.now-list {
+.now-content ul {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0 0 0;
+    margin: 0.5rem 0 1.2rem 0;
 }
 
-.now-list li {
+.now-content ul li {
     position: relative;
     padding-left: 1em;
     margin-bottom: 0.4rem;
     line-height: 1.5;
 }
 
-.now-list li:before {
+.now-content ul li:before {
     content: "—";
     position: absolute;
     left: 0;
     color: var(--muted-text);
 }
 
-/* Article Styling */
+.now-content p {
+    margin-bottom: 0.8rem;
+}
+
+/* Article List Styling */
 .article-list {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
@@ -182,12 +190,7 @@ nav a {
     text-decoration: none;
     color: var(--text-color);
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid transparent;
     transition: all 0.2s ease;
-}
-
-.article-item:hover {
-    border-bottom-color: var(--accent-color);
 }
 
 .article-date {
@@ -211,11 +214,22 @@ nav a {
     color: var(--accent-color);
 }
 
-@media (min-width: 768px) {
-    .now-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.post-item:hover .post-title {
+    color: var(--accent-color);
 }
 
 
