@@ -11,20 +11,15 @@ github_username: ngnnah
 markdown: kramdown
 permalink: /posts/:title/
 remote_theme: jekyll/minima
+future: true
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
-# Collections
+# Collections; In Jekyll, posts is a special built-in collection that doesn't need to be explicitly defined in most cases
 collections:
-  posts:
-    output: true
-    permalink: /posts/:title/
   now-archive:
     output: true
-    permalink: /now-archive/:title/
-
-
-future: true    
+    permalink: /:collection/:title/
