@@ -16,8 +16,7 @@ layout: default
         <h2>Me Now</h2>
         <div class="content">
             {% if site.now-archive and site.now-archive.size > 0 %}
-                {% assign sorted_updates = site.now-archive | sort: 'date' | last %}
-                {% assign latest_now = sorted_updates | first %}
+                {% assign latest_now = site.now-archive | sort: 'date' | last %}
                 <p><strong>{{ latest_now.title }}</strong></p>
                 {{ latest_now.content }}
                 <p class="meta">Updated {{ latest_now.date | date: "%B %-d, %Y" }} · <a href="/now-archive">See past updates</a></p>
