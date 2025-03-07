@@ -12,12 +12,12 @@
 <body>
     <header>
         <div class="container">
-            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <h1><a href="{{ '/' | relative_url }}"><span class="emphasis">N</span>hat <span class="emphasis">N</span>guyen</a></h1>
             <nav>
                 <ul>
-                    <li><a href="{{ '/#me' | relative_url }}">About</a></li>
-                    <li><a href="{{ '/#now' | relative_url }}">Now</a></li>
-                    <li><a href="{{ '/#articles' | relative_url }}">Articles</a></li>
+                    <li><a href="{{ '/#me' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>About</a></li>
+                    <li><a href="{{ '/#now' | relative_url }}" {% if page.url contains 'now' %}class="active"{% endif %}>Now</a></li>
+                    <li><a href="{{ '/#articles' | relative_url }}" {% if page.url contains 'posts' %}class="active"{% endif %}>Articles</a></li>
                 </ul>
             </nav>
         </div>
