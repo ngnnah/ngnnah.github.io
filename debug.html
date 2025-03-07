@@ -20,14 +20,14 @@ permalink: /debug/
     {% endfor %}
     </ul>
     
-    <h2>Now Archive:</h2>
+    <h2>Updates Collection:</h2>
     <ul>
-    {% if site.now-archive %}
-        {% for item in site.now-archive %}
-            <li>{{ item.title }} - {{ item.date }}</li>
+    {% if site.updates %}
+        {% for update in site.updates %}
+            <li>{{ update.title }} - {{ update.date | date_to_string }}</li>
         {% endfor %}
     {% else %}
-        <li>No items found in now-archive collection</li>
+        <li>No updates found</li>
     {% endif %}
     </ul>
     

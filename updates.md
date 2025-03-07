@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Past Updates
-permalink: /now-archive/
+permalink: /updates/
 ---
 
 <main class="container">
@@ -11,9 +11,9 @@ permalink: /now-archive/
         <p>This is an archive of my past "now" updates, showing what I was focused on at different points in time.</p>
         
         <div class="updates-list">
-            {% for update in site.now-archive reversed %}
+            {% for update in site.updates reversed %}
             <div class="update-item">
-                <h2>{{ update.title }}</h2>
+                <p>{{ update.date | date: "%B %Y" }}</p>
                 {{ update.content }}
                 <hr>
             </div>
@@ -23,3 +23,4 @@ permalink: /now-archive/
         <a href="{{ '/' | relative_url }}" class="back-to-home">← Back to home</a>
     </div>
 </main>
+

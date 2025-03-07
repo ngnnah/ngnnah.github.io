@@ -20,6 +20,6 @@ plugins:
 
 # Collections; In Jekyll, posts is a special built-in collection that doesn't need to be explicitly defined in most cases
 collections:
-  now-archive:
+  updates:
     output: true
     permalink: /:collection/:title/
