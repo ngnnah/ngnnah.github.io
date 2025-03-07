@@ -1,4 +1,3 @@
-
 # Site settings
 title: ngnnah
 email: your-email@example.com
@@ -14,9 +13,10 @@ markdown: kramdown
 permalink: /posts/:title/
 remote_theme: jekyll/minima
 
-
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
+# GitHub Pages compatibility
+safe: true

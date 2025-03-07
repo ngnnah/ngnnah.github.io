@@ -20,14 +20,18 @@ permalink: /debug/
     {% endfor %}
     </ul>
     
-    <h2>Updates Collection:</h2>
+    
+    <h2>Data Files:</h2>
+    <p>Updates data file has {{ site.data.updates | size }} entries</p>
+    
+    <h3>Updates from Data:</h3>
     <ul>
-    {% if site.updates %}
-        {% for update in site.updates %}
+    {% if site.data.updates %}
+        {% for update in site.data.updates %}
             <li>{{ update.title }} - {{ update.date | date_to_string }}</li>
         {% endfor %}
     {% else %}
-        <li>No updates found</li>
+        <li>No updates data found</li>
     {% endif %}
     </ul>
     
@@ -36,4 +40,8 @@ permalink: /debug/
     <p>url: {{ site.url }}</p>
     <p>time: {{ site.time }}</p>
     <p>future: {{ site.future }}</p>
+    
+    <h2>Build Environment:</h2>
+    <p>jekyll.environment: {{ jekyll.environment }}</p>
+    <p>site.safe: {{ site.safe }}</p>
 </main>
