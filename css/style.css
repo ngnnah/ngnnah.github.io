@@ -148,6 +148,72 @@ nav a.active::after {
     height: 2px;
 }
 
+/* Creative profile image hover effect */
+.profile-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+}
+
+.profile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.profile-image-alt {
+    opacity: 0;
+}
+
+/* Mouse position-based effect */
+.profile-container:hover .profile-image-main {
+    opacity: 0;
+}
+
+.profile-container:hover .profile-image-alt {
+    opacity: 1;
+}
+
+/* Left-right hover control */
+.profile-container .hover-control {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+}
+
+.profile-container .hover-left {
+    left: 0;
+}
+
+.profile-container .hover-right {
+    right: 0;
+}
+
+.profile-container .hover-left:hover ~ .profile-image-main {
+    opacity: 1;
+}
+
+.profile-container .hover-left:hover ~ .profile-image-alt {
+    opacity: 0;
+}
+
+.profile-container .hover-right:hover ~ .profile-image-main {
+    opacity: 0;
+}
+
+.profile-container .hover-right:hover ~ .profile-image-alt {
+    opacity: 1;
+}
+
 /* Header */
 header {
     padding: 2rem 0;
@@ -202,128 +268,101 @@ nav a {
     margin-top: 1.5rem;
 }
 
-/* Now Section Styling */
-.now-headline {
-    font-size: 1.4rem;
+/* Concise Now section */
+.now-section {
+    margin-bottom: 3rem;
+}
+
+.now-title {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
     font-weight: 500;
-    margin-bottom: 1.5rem;
-    border-bottom: none;
 }
 
-.now-content {
-    line-height: 1.6;
-}
-
-.now-content h2 {
-    font-size: 1.2rem; 
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    border-bottom: none;
-    display: block;
-}
-
-.now-content h2:first-child {
-    margin-top: 0;
-}
-
-.now-content strong {
+.now-category {
+    color: var(--accent-color);
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--accent-color);
-    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: inline-block;
 }
 
-.now-content ul {
+.now-list {
     list-style: none;
     padding: 0;
-    margin: 0.5rem 0 1.2rem 0;
+    margin: 0 0 1.2rem 0;
 }
 
-.now-content ul li {
+.now-list li {
     position: relative;
     padding-left: 1em;
     margin-bottom: 0.4rem;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
-.now-content ul li:before {
+.now-list li::before {
     content: "—";
     position: absolute;
     left: 0;
     color: var(--muted-text);
 }
 
-.now-content p {
-    margin-bottom: 0.8rem;
+.now-meta {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin-top: 1.5rem;
+    font-style: italic;
 }
 
+/* Single-line article entries */
+.article-container {
+    margin-bottom: 2.5rem;
+}
 
-/* Inline Article Styling */
 .article-entry {
     display: flex;
     align-items: baseline;
-    margin-bottom: 2rem;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: transform 0.2s ease;
-}
-
-.article-entry:hover {
-    transform: translateX(5px);
+    margin-bottom: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .article-date {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.8rem;
     color: var(--muted-text);
+    margin-right: 1rem;
     flex-shrink: 0;
-    padding-right: 1rem;
-    position: relative;
 }
 
-.article-date::after {
-    content: "—";
-    position: absolute;
-    right: 0.3rem;
-    color: var(--accent-color);
-    opacity: 0.6;
-}
-
-.article-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0;
-    padding: 0;
-    border-bottom: none;
+.article-title-link {
     color: var(--link-color);
-    transition: color 0.2s ease;
     text-decoration: none;
-    display: inline;
-    line-height: 1.4;
+    transition: color 0.2s ease;
+    font-size: 1.2rem;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.article-entry:hover .article-title {
+.article-title-link:hover {
     color: var(--accent-color);
 }
 
-@media (max-width: 640px) {
-    .article-entry {
-        flex-direction: column;
-        margin-bottom: 1.5rem;
-    }
-    
-    .article-date {
-        margin-bottom: 0.3rem;
-    }
-    
-    .article-date::after {
-        display: none;
-    }
+/* Line connector */
+.article-entry::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border-color) 33%, transparent);
+    margin: 0 0.6rem;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
 }
-
-
 
 
 /* Media query for larger screens */
@@ -416,47 +455,3 @@ footer {
     }
 }
 
-/* Asymmetrical Layout */
-.profile-container {
-    position: relative;
-    padding-top: 60px;
-}
-
-.profile-image-wrapper {
-    position: absolute;
-    top: 0;
-    right: 10%;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    z-index: 1;
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-text {
-    background-color: var(--subtle-color);
-    padding: 80px 2rem 2rem 2rem;
-    margin-top: 60px;
-    position: relative;
-}
-
-@media (min-width: 768px) {
-    .profile-image-wrapper {
-        width: 180px;
-        height: 180px;
-        top: -40px;
-        right: 60px;
-    }
-    
-    .profile-text {
-        padding-right: 3rem;
-    }
-}
