@@ -1,0 +1,39 @@
+---
+layout: default
+permalink: /debug/
+---
+
+<main class="container">
+    <h1>Debug Information</h1>
+    
+    <h2>Collections:</h2>
+    <ul>
+    {% for collection in site.collections %}
+        <li>{{ collection.label }} ({{ collection.docs.size }} items)</li>
+    {% endfor %}
+    </ul>
+    
+    <h2>Posts ({{ site.posts.size }}):</h2>
+    <ul>
+    {% for post in site.posts %}
+        <li>{{ post.title }} - {{ post.date }}</li>
+    {% endfor %}
+    </ul>
+    
+    <h2>Now Archive:</h2>
+    <ul>
+    {% if site.now-archive %}
+        {% for item in site.now-archive %}
+            <li>{{ item.title }} - {{ item.date }}</li>
+        {% endfor %}
+    {% else %}
+        <li>No items found in now-archive collection</li>
+    {% endif %}
+    </ul>
+    
+    <h2>Site Variables:</h2>
+    <p>baseurl: {{ site.baseurl }}</p>
+    <p>url: {{ site.url }}</p>
+    <p>time: {{ site.time }}</p>
+    <p>future: {{ site.future }}</p>
+</main>

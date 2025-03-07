@@ -1,3 +1,4 @@
+future: true
 # Site settings
 title: ngnnah
 email: your-email@example.com
@@ -11,7 +12,6 @@ github_username: ngnnah
 markdown: kramdown
 permalink: /posts/:title/
 remote_theme: jekyll/minima
-future: true
 
 # Plugins
 plugins:
