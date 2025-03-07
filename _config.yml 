@@ -24,4 +24,4 @@ plugins:
 collections:
   updates:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:slug/
