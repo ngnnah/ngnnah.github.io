@@ -9,18 +9,19 @@ github_username: ngnnah
 
 # Build settings
 markdown: kramdown
-permalink: /:title/
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+permalink: /posts/:title/
+remote_theme: jekyll/minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
 
 # Collections
 collections:
   posts:
     output: true
-    permalink: /:collection/:path/
+    permalink: /posts/:title/
+  now-archive:
+    output: true
+    permalink: /now-archive/:path/

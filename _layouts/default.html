@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ '/#me' | relative_url }}">About</a></li>
+                    <li><a href="{{ '/#now' | relative_url }}">Now</a></li>
+                    <li><a href="{{ '/#writings' | relative_url }}">Writings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+        </div>
+    </footer>
+
+    <script src="{{ '/js/main.js' | relative_url }}"></script>
+</body>
+</html>

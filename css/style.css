@@ -161,6 +161,39 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Post styles */
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content h2 {
+    margin-top: 2.5rem;
+}
+
+.post-content h3 {
+    margin-top: 2rem;
+}
+
+.back-to-home {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header .container {
