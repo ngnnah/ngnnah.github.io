@@ -2,6 +2,7 @@
 layout: default
 title: "February 2025"
 date: 2025-02-01
+permalink: /updates/february-2025/
 ---
 
 ## February 2025
