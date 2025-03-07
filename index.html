@@ -41,17 +41,14 @@ layout: default
     <section id="articles" class="section">
         <h2>Newest Articles</h2>
         <div class="content">
-            <div class="post-list">
-                {% for post in site.posts %}
-                <div class="post-item">
-                    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                    <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
-                </div>
-                {% endfor %}
+            {% for post in site.posts %}
+            <div class="article-entry">
+                <span class="article-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                <a href="{{ post.url | relative_url }}" class="article-title">{{ post.title }}</a>
             </div>
+            {% endfor %}
         </div>
     </section>
-
 
 
 </main>
