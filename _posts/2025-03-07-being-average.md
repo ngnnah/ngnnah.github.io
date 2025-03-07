@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Myth of Average vs the Polished Stone"
+title: "The Average Joe and the Jack of All Trades"
 date: 2025-03-07
 ---
 
