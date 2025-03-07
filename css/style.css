@@ -66,6 +66,62 @@ a:hover {
     border-color: var(--link-hover);
 }
 
+
+
+/* Fixed/Sticky Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Add shadow when scrolling */
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+}
+
+header h1 a {
+    color: var(--text-color);
+    border-bottom: none;
+}
+
+header h1 a:hover {
+    color: var(--accent-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    font-size: 0.9rem;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: none;
+}
+
+
 /* Enhanced Name Styling */
 header h1 a {
     font-weight: 700;
@@ -147,17 +203,16 @@ nav a.active::after {
     transform: scaleX(1);
     height: 2px;
 }
-
-/* Creative profile image hover effect */
+/* Profile Image Container */
 .profile-container {
     position: relative;
-    width: 180px;
-    height: 180px;
-    overflow: hidden;
+    width: 240px;
+    height: 300px;
     margin-bottom: 1.5rem;
-    border-radius: 4px;
+    overflow: hidden;
 }
 
+/* Base profile image styling */
 .profile-image {
     position: absolute;
     top: 0;
@@ -168,94 +223,54 @@ nav a.active::after {
     transition: opacity 0.4s ease;
 }
 
+/* Hide alternate image by default */
 .profile-image-alt {
     opacity: 0;
 }
 
-/* Mouse position-based effect */
-.profile-container:hover .profile-image-main {
-    opacity: 0;
-}
-
-.profile-container:hover .profile-image-alt {
-    opacity: 1;
-}
-
-/* Left-right hover control */
-.profile-container .hover-control {
+/* Hover controls */
+.hover-control {
     position: absolute;
     top: 0;
-    width: 50%;
     height: 100%;
-    z-index: 2;
+    width: 50%;
+    z-index: 10;
+    cursor: pointer;
 }
 
-.profile-container .hover-left {
+.hover-left {
     left: 0;
 }
 
-.profile-container .hover-right {
+.hover-right {
     right: 0;
 }
 
-.profile-container .hover-left:hover ~ .profile-image-main {
+/* Show main image when hovering left side */
+.hover-left:hover ~ .profile-image-main {
     opacity: 1;
 }
 
-.profile-container .hover-left:hover ~ .profile-image-alt {
+.hover-left:hover ~ .profile-image-alt {
     opacity: 0;
 }
 
-.profile-container .hover-right:hover ~ .profile-image-main {
+/* Show alt image when hovering right side */
+.hover-right:hover ~ .profile-image-main {
     opacity: 0;
 }
 
-.profile-container .hover-right:hover ~ .profile-image-alt {
+.hover-right:hover ~ .profile-image-alt {
     opacity: 1;
 }
 
-/* Header */
-header {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 2rem;
+/* Default hover behavior for entire container */
+.profile-container:hover .profile-image-main {
+    opacity: 0.3;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin-bottom: 0;
-    font-size: 1.8rem;
-}
-
-header h1 a {
-    color: var(--text-color);
-    border-bottom: none;
-}
-
-header h1 a:hover {
-    color: var(--accent-color);
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav li {
-    margin-left: 1.5rem;
-}
-
-nav a {
-    font-size: 0.9rem;
-    font-family: 'Roboto Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: none;
+.profile-container:hover .profile-image-alt {
+    opacity: 0.7;
 }
 
 /* Sections */
