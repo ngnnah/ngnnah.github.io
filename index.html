@@ -3,53 +3,74 @@ layout: default
 ---
 
 <main class="container">
-    <section id="me" class="section">
-        <h2>About Me</h2>
-        <div class="content">
-            <div class="profile-container">
-                <div class="hover-control hover-left"></div>
-                <div class="hover-control hover-right"></div>
-                <img src="/images/profile.jpeg" alt="Nhat Nguyen" class="profile-image profile-image-main">
-                <img src="/images/profile-alt.jpeg" alt="Nhat Nguyen alternate" class="profile-image profile-image-alt">
-            </div>
-            
-            <p>Geospatial Data Engineer, central Vietnam native, based in Florida, now live in Osaka.</p>
-                
-            <p>Fascinated by light and air, tree and wave, children and elders, extreme and moderation, stories and myths.</p>
-            
-            <p>Graduated from MIT in 2021. Working at Ready.net/Unified Address Database. Currently building Global Utility Serviceable Location Registry.</p>
-            
-            <p>I write about technology, personal development, travel, and occasional philosophical musings.</p>
-        </div>
-    </section>
+  <section id="me" class="section">
+    <h2>About Me</h2>
+    <div class="content">
+      <div class="profile-container">
+        <div class="hover-control hover-left"></div>
+        <div class="hover-control hover-right"></div>
+        <img
+          src="/images/profile.jpeg"
+          alt="Nhat Nguyen"
+          class="profile-image profile-image-main"
+        />
+        <img
+          src="/images/profile-alt.jpeg"
+          alt="Nhat Nguyen alternate"
+          class="profile-image profile-image-alt"
+        />
+      </div>
 
-    <section id="now" class="section">
-        <h2>Me Now</h2>
-        <div class="content">
-            {% assign updates = site.data.updates | sort: 'date' %}
-            {% assign latest_now = updates | last %}
-            
-            {% if latest_now.title %}
-            <h3 class="now-headline">{{ latest_now.title }}</h3>
-            {% endif %}
-            
-            <div class="now-content">
-                {{ latest_now.content | markdownify }}
-            </div>
-            
-            <p class="meta">Updated {{ latest_now.date | date: "%B %-d, %Y" }} · <a href="/updates">See past updates</a></p>
-        </div>
-    </section>
+      <p>
+        Geospatial Data Engineer, central Vietnam native, based in Florida, now
+        live in Osaka.
+      </p>
 
-    <section id="articles" class="section">
-        <h2>Newest Articles</h2>
-        <div class="content">
-            {% for post in site.posts %}
-            <div class="article-entry">
-                <span class="article-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                <a href="{{ post.url | relative_url }}" class="article-title-link">{{ post.title }}</a>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
+      <p>
+        Fascinated by light and air, tree and wave, children and elders, extreme
+        and moderation, stories and myths.
+      </p>
+
+      <p>
+        Graduated from MIT in 2021. Working at Ready.net, currently building
+        Global Utility Serviceable Location Registry.
+      </p>
+
+      <p>
+        I write about technology, personal development, travel, and occasional
+        philosophical musings.
+      </p>
+    </div>
+  </section>
+
+  <section id="now" class="section">
+    <h2>Me Now</h2>
+    <div class="content">
+      {% assign updates = site.data.updates | sort: 'date' %} {% assign
+      latest_now = updates | last %} {% if latest_now.title %}
+      <h3 class="now-headline">{{ latest_now.title }}</h3>
+      {% endif %}
+
+      <div class="now-content">{{ latest_now.content | markdownify }}</div>
+
+      <p class="meta">
+        Updated {{ latest_now.date | date: "%B %-d, %Y" }} ·
+        <a href="/updates">See past updates</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="articles" class="section">
+    <h2>Newest Articles</h2>
+    <div class="content">
+      {% for post in site.posts %}
+      <div class="article-entry">
+        <span class="article-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url | relative_url }}" class="article-title-link"
+          >{{ post.title }}</a
+        >
+      </div>
+      {% endfor %}
+    </div>
+  </section>
 </main>
