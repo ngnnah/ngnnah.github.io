@@ -42,6 +42,6 @@ function findBalance() {
 }
 ```
 
-During my evening jogs around Osaka Castle, stone meets sky in perfect _MA_—a daily reminder that in a world of digital overwhelm, sometimes steel against gravity is the perfect debugger.
+During my evening jogs around Osaka Castle, stone meets sky in perfect MA—a daily reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
 
 ⭐⭐⭐⭐½ (4.5/5 barbells)
