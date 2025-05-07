@@ -9,7 +9,10 @@ date: 2025-03-01
 For years, I've hovered over the "Create Blog" button without committing.
 
 > "Who would read this?"
-> "Why do this now? Why do it at all?"
+
+> "Why do this now?"
+
+> "Why do it at all?"
 
 Yet here we are—cursor blinking on line one.
 
