@@ -15,7 +15,7 @@ After a year toggling between optimizing algorithms and optimizing my deadlift f
 
 ## The Japanese Double-Life 二重生活
 
-Living in the shadow of Osaka Castle perfectly captures this: I bike past salarymen typing furiously on phones while stone walls that have witnessed centuries stand unmoved. Between vending machines, tiny vermilion Shinto shrines house kami that have outlasted countless technological revolutions.
+Japan: land of contrast. Living in the shadow of Osaka Castle captures this perfectly—I bike past salarymen typing furiously while centuries-old stone walls stand unmoved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
 
 Japan doesn't choose—it harmonizes.
 
@@ -24,7 +24,7 @@ This duality makes Mishima quintessentially _Japanese_ despite his rebellion:
 - My brainwrecking code of 2020? **Obsolete digital vapor.**
 - The serene torii gates in my photos? **Standing for generations.**
 
-## Digital Kami in the Machine
+## Digital Balance in the Machine
 
 The onsen doesn't care about my optimization problems. The barbell doesn't accept excuses about API latency. Like Mishima's steel, they demand presence.
 
