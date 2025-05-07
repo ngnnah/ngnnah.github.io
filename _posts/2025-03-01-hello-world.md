@@ -28,9 +28,9 @@ This isn't about expertise or audience-building. It's about tracing unlikely coo
 
 ## What Grows Here
 
-- **Code snippets** from data engineering trenches
-- **Personal systems** for continuous improvement
-- **East-West observations** through a Vietnamese-American lens, with a Japanese tint
+- **Code fragments** unearthed from data pipeline excavations
+- **Life algorithms** for continuous improvement
+- **East-West cultural parallax views** through a Vietnamese-American lens now acquiring a sakura-tinted polarizing filter
 - **Ideas** worth remembering
 
 As Frieren collected spells in her grimoire, I'll collect thoughts here—not to defeat demon kings, but to navigate our algorithm-driven world with more intention.
