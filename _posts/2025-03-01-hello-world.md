@@ -8,13 +8,11 @@ date: 2025-03-01
 
 For years, I've hovered over the "Create Blog" button without committing.
 
-> "Who would read this?"
+> _"Who would read this?"_  
+> _"Why do this now?"_  
+> _"Why do it at all?"_
 
-> "Why do this now?"
-
-> "Why do it at all?"
-
-Yet here we are—cursor blinking on line one.
+Yet here we are, at last—cursor blinking on `line_01`.
 
 ## Why Now?
 
