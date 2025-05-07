@@ -23,13 +23,13 @@ function beginJourney() {
 
 Like Frieren after her hero's journey, I've realized some quests only begin once you think they've ended. The true adventure starts now—in the quiet space after the epic.
 
-This isn't about expertise or audience-building. It's about documenting my path from a Vietnamese kid debugging BASIC to an engineer watching cherry blossoms fall on Osaka Castle.
+This isn't about expertise or audience-building. It's about documenting my path from a Vietnamese kid debugging PASCAL to an engineer watching cherry blossoms fall on Osaka Castle.
 
 ## What Grows Here
 
 - **Code snippets** from data engineering trenches
 - **Personal systems** for continuous improvement
-- **East-West observations** through a Vietnamese-Japanese lens
+- **East-West observations** through a Vietnamese-American lens, with a Japanese tint
 - **Ideas** worth remembering
 
 As Frieren collected spells in her grimoire, I'll collect thoughts here—not to defeat demon kings, but to navigate our algorithm-driven world with more intention.
