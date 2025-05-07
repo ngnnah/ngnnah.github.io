@@ -13,9 +13,9 @@ Reading Mishima's **"Sun and Steel"** while soaking in an onsen after deadlift d
 
 After a year toggling between optimizing algorithms and optimizing my deadlift form, Mishima's journey from word-obsessed intellectual to physical devotee feels like finding my digital doppelgänger from 1968.
 
-## The Japanese Double-Life 二重生活
+## Japan: land of contrast
 
-Japan: land of contrast. Living in the shadow of Osaka Castle captures this perfectly—I bike past salarymen typing furiously while centuries-old stone walls stand unmoved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
+Living in the shadow of Osaka Castle captures this perfectly—I bike past salarymen typing furiously while centuries-old stone walls stand unmoved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
 
 Japan doesn't choose—it harmonizes.
 
