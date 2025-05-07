@@ -33,9 +33,7 @@ This isn't about expertise or audience-building. It's about tracing unlikely coo
 - **East-West cultural parallax views** through a Vietnamese-American lens now acquiring a sakura-tinted polarizing filter
 - **Ideas** worth remembering
 
-As Frieren collected spells in her grimoire, I'll collect thoughts here—not to defeat demon kings, but to navigate our algorithm-driven world with more intention.
-
-No tracking pixels. No email popups. Just ideas in the quietest corner of the internet.
+As Frieren collected spells in her grimoire, I'll distill first principles here—not for demon kings, but for navigating digital neon without losing our way. No vanity metrics or FOMO machines—just a quiet refuge from the endless scroll.
 
 For the uncertain coder debating whether to push their thoughts to production: this commit is for you.
 
