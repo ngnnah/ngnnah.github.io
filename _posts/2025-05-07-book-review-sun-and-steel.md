@@ -21,8 +21,8 @@ Japan doesn't choose—it harmonizes.
 
 This duality makes Mishima quintessentially _Japanese_ despite his rebellion:
 
-- My code from 2020? **Obsolete.**
-- The torii gates I photograph? **Standing for generations.**
+- My brainwrecking code of 2020? **Obsolete digital vapor.**
+- The serene torii gates in my photos? **Standing for generations.**
 
 ## Digital Kami in the Machine
 
