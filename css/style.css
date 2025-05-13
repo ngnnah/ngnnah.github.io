@@ -529,3 +529,21 @@ img.lazyloaded {
     max-height: 200px;
   }
 }
+/* Explicitly remove ALL sticky behavior from post elements */
+.post-header,
+.post-header *,
+.sticky-title-container,
+.post-title,
+.post-description,
+.post-date {
+  position: static !important; /* Use !important to override any other styles */
+  top: auto !important;
+  z-index: auto !important;
+}
+
+/* Ensure site header remains sticky */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
