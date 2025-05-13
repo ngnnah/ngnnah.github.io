@@ -20,24 +20,3 @@ document.addEventListener("DOMContentLoaded", function () {
     copyright.textContent = `© ${currentYear} ngnnah`;
   }
 });
-
-// Detect scroll for header shadow
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 10) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", function () {
-    const titleContainer = document.querySelector(".sticky-title-container");
-    if (window.scrollY > 10) {
-      titleContainer.classList.add("scrolled");
-    } else {
-      titleContainer.classList.remove("scrolled");
-    }
-  });
-});

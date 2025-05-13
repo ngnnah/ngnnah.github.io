@@ -16,14 +16,7 @@ layout: default
 
     {% if page.image %}
     <div class="post-image">
-      <img
-        src="{{ page.image }}"
-        srcset="{{ page.image | replace: '.jpg', '-small.jpg' }} 600w,
-                     {{ page.image }} 1200w"
-        sizes="(max-width: 600px) 100vw, 1200px"
-        loading="lazy"
-        alt="{{ page.title }}"
-      />
+      <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy" />
     </div>
     {% endif %}
 
@@ -32,3 +25,18 @@ layout: default
     <a href="{{ '/' | relative_url }}" class="back-to-home">← Back to home</a>
   </article>
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Make title sticky on scroll
+    const titleContainer = document.querySelector(".sticky-title-container");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 10) {
+        titleContainer.classList.add("scrolled");
+      } else {
+        titleContainer.classList.remove("scrolled");
+      }
+    });
+  });
+</script>
