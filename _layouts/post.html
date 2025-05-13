@@ -5,13 +5,18 @@ layout: default
 <main class="container">
   <article class="post">
     <header class="post-header">
+      <!-- Sticky title container -->
       <div class="sticky-title-container">
         <h1 class="post-title">{{ page.title }}</h1>
       </div>
-      {% if page.description %}
-      <div class="post-description">{{ page.description }}</div>
-      {% endif %}
-      <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+
+      <!-- Non-sticky content -->
+      <div class="non-sticky-content">
+        {% if page.description %}
+        <div class="post-description">{{ page.description }}</div>
+        {% endif %}
+        <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+      </div>
     </header>
 
     {% if page.image %}

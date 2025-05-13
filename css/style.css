@@ -535,3 +535,8 @@ img.lazyloaded {
     max-height: 200px;
   }
 }
+.non-sticky-content {
+  position: relative;
+  z-index: 90;
+  background-color: var(--background-color);
+}
