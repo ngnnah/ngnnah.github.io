@@ -364,6 +364,7 @@ footer {
 /* Post Styles */
 .post-header {
   margin-bottom: var(--spacing-md);
+  position: static; /* Ensure not sticky */
 }
 
 .post-description {
@@ -379,14 +380,6 @@ footer {
   font-size: 0.85rem;
   color: var(--muted-text);
   margin-bottom: var(--spacing-md);
-}
-
-/* Remove sticky behavior from post titles */
-.sticky-title-container {
-  position: static; /* Changed from sticky to static */
-  background-color: var(--background-color);
-  padding: var(--spacing-sm) 0;
-  margin-bottom: var(--spacing-sm);
 }
 
 .post-title {
@@ -484,6 +477,15 @@ img.lazyloaded {
   margin-bottom: var(--spacing-xs);
 }
 
+/* Explicitly ensure no sticky behavior in post elements */
+.post-header,
+.post-title,
+.post-description,
+.post-date {
+  position: static !important;
+  top: auto !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   header .container {
@@ -528,22 +530,4 @@ img.lazyloaded {
   .post-image {
     max-height: 200px;
   }
-}
-/* Explicitly remove ALL sticky behavior from post elements */
-.post-header,
-.post-header *,
-.sticky-title-container,
-.post-title,
-.post-description,
-.post-date {
-  position: static !important; /* Use !important to override any other styles */
-  top: auto !important;
-  z-index: auto !important;
-}
-
-/* Ensure site header remains sticky */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
