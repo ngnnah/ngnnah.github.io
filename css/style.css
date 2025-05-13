@@ -106,6 +106,31 @@ header h1 {
   font-size: 1.8rem;
 }
 
+.sticky-title-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  padding: var(--spacing-sm) 0;
+  z-index: 100;
+}
+
+.post-title {
+  margin-bottom: 0;
+}
+
+.sticky-title-container {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  padding: var(--spacing-sm) 0;
+  z-index: 100;
+  transition: box-shadow 0.3s ease;
+}
+
+.sticky-title-container.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
 /* Enhanced Name Styling */
 header h1 a {
   font-weight: 700;
