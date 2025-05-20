@@ -3,7 +3,12 @@
   "short_name": "NN",
   "icons": [
     {
-      "src": "/images/favicon1.png",
+      "src": "/images/favicon1a.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon1a.png",
       "sizes": "192x192",
       "type": "image/png"
     }
