@@ -32,19 +32,34 @@ window.addEventListener("scroll", function () {
 });
 
 
-// Logo animation on page load
+// Logo animation on page load - made subtler for sticky header
 document.addEventListener("DOMContentLoaded", function() {
   const logo = document.querySelector(".header-logo");
   if (logo) {
-    // Start slightly elevated
-    logo.style.transform = "translateY(-10px) rotate(-8deg)";
-    logo.style.opacity = "0.7";
+    // Start slightly elevated but less extreme
+    logo.style.transform = "translateY(-6px) rotate(-5deg)"; // Reduced from -10px and -8deg
+    logo.style.opacity = "0.8"; // Increased from 0.7
     
     // Animate to normal position
     setTimeout(() => {
-      logo.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+      logo.style.transition = "transform 0.4s ease, opacity 0.4s ease"; // Slightly faster
       logo.style.transform = "translateY(0) rotate(0)";
       logo.style.opacity = "1";
     }, 100);
   }
+});
+
+// Smooth scrolling for internal links - adjusted for sticky header
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({
+        top: target.offsetTop - headerHeight - 10, // Added 10px for spacing
+        behavior: "smooth",
+      });
+    }
+  });
 });
