@@ -30,3 +30,21 @@ window.addEventListener("scroll", function () {
     header.classList.remove("scrolled");
   }
 });
+
+
+// Logo animation on page load
+document.addEventListener("DOMContentLoaded", function() {
+  const logo = document.querySelector(".header-logo");
+  if (logo) {
+    // Start slightly elevated
+    logo.style.transform = "translateY(-10px) rotate(-8deg)";
+    logo.style.opacity = "0.7";
+    
+    // Animate to normal position
+    setTimeout(() => {
+      logo.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+      logo.style.transform = "translateY(0) rotate(0)";
+      logo.style.opacity = "1";
+    }, 100);
+  }
+});
