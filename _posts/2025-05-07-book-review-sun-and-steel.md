@@ -15,14 +15,14 @@ After a year toggling between optimizing algorithms and optimizing my deadlift f
 
 ## Japan: Land of contrast
 
-Living in the shadow of Osaka Castle captures this perfectly—I bike past salarymen typing furiously while centuries-old stone walls stand unmoved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
+Salarymen type furiously beside centuries-old stone walls that have not moved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
 
 Japan doesn't choose—it harmonizes.
 
 This duality makes Mishima quintessentially _Japanese_ despite his rebellion:
 
 - My brainwrecking code of 2020? **Obsolete digital vapor.**
-- The serene torii gates in my photos? **Standing for generations.**
+- The serene torii gates? **Standing for generations.**
 
 ## Digital Balance in the Machine
 
@@ -42,6 +42,6 @@ function findBalance() {
 }
 ```
 
-During my evening jogs around Osaka Castle, stone meets sky in perfect MA—a daily reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
+Stone meets sky in perfect MA—a reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
 
 ⭐⭐⭐⭐½ (4.5/5 barbells)
