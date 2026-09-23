@@ -1,5 +1,5 @@
 # Site settings
-title: ngnnah
+title: Nhat Nguyen
 email: your-email@example.com
 description: >-
   A personal blog about technology, software development, and personal growth.
@@ -10,7 +10,9 @@ github_username: ngnnah
 # Build settings
 future: true
 markdown: kramdown
-permalink: /posts/:title/
+# matches the URLs the site already served while this file was
+# unreadable (filename had a trailing space), so nothing 404s
+permalink: /:year/:month/:day/:title.html
 remote_theme: jekyll/minima
 
 # Plugins
