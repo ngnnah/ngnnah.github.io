@@ -6,10 +6,8 @@ date: 2025-03-02
 
 ## 🔊 → 🔇 → 💡
 
-My phone buzzed 147 times yesterday. I counted.
-
 > "We're drowning in information while starving for wisdom."
-> — E.O. Wilson (and my desktop wallpaper)
+> — E.O. Wilson
 
 Digital minimalism isn't another aesthetic for your Instagram. It's a rebellion against the attention economy—a deliberate reclaiming of mental space in an increasingly crowded digital landscape.
 
