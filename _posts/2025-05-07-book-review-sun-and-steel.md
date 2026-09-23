@@ -42,6 +42,6 @@ function findBalance() {
 }
 ```
 
-Stone meets sky in perfect MA—a reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
+Stone meets sky in perfect MA: a reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
 
 ⭐⭐⭐⭐½ (4.5/5 barbells)

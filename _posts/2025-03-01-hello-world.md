@@ -25,7 +25,7 @@ function beginJourney() {
 
 Like Frieren after her hero's journey, I've realized some quests only begin once you think they've ended. The true adventure starts now—in the quiet space after the epic.
 
-This isn't about expertise or audience-building. It's about tracing unlikely coordinates—from a curious kid in Vietnam debugging PASCAL on a borrowed computer, to an MIT student surviving on ramen and mathematical proofs, to an engineer now building data pipelines for a living.
+This isn't about expertise or audience-building. It's about tracing unlikely coordinates—from a curious kid in Vietnam debugging PASCAL with pencil and paper, to an MIT student surviving on ramen and mathematical proofs, to an engineer now building modern data pipelines with AI.
 
 ## What Grows Here
 
