@@ -4,44 +4,14 @@ title: "Sun & Steel: When Code Meets Muscle"
 date: 2025-05-07
 ---
 
-## 🏯 × 💻 × 🏋️‍♂️
+Reading Mishima's *Sun and Steel* after deadlift day is not a scene the kid in Vietnam saw coming.
 
-Reading Mishima's **"Sun and Steel"** while soaking in an onsen after deadlift day is a cultural paradox I never imagined as a kid in Vietnam.
+The book is Mishima's account of turning from a word-obsessed intellectual into someone who trained his body seriously, and why he thought the second corrected the first. After a year of toggling between optimizing algorithms and optimizing my deadlift form, he reads like a doppelgänger from 1968.
 
-> "Code is a fabricated void; the body is concrete reality."  
-> —Mishima (paraphrased by a sweaty data engineer)
+The barbell doesn't accept excuses about API latency. It wants you in the room, which is more than my code has ever asked of me.
 
-After a year toggling between optimizing algorithms and optimizing my deadlift form, Mishima's journey from word-obsessed intellectual to physical devotee feels like finding my digital doppelgänger from 1968.
+*MA* (間), the meaningful space between things, is the part I keep coming back to. Not mind or body, but the interval you keep open between them.
 
-## Japan: Land of contrast
-
-Salarymen type furiously beside centuries-old stone walls that have not moved. Between vending machines, vermilion Shinto shrines persist through endless technological revolutions.
-
-Japan doesn't choose—it harmonizes.
-
-This duality makes Mishima quintessentially _Japanese_ despite his rebellion:
-
-- My brainwrecking code of 2020? **Obsolete digital vapor.**
-- The serene torii gates? **Standing for generations.**
-
-## Digital Balance in the Machine
-
-The onsen doesn't care about my optimization problems. The barbell doesn't accept excuses about API latency. Like Mishima's steel, they demand presence.
-
-The Japanese concept of _MA_ (間)—the meaningful space between things—might be what every programmer-turned-athlete needs. Not an either/or choice, but the balance found in the interval between binaries.
-
-In our era where AI hallucinates reality, Mishima's physical authenticity feels prophetically necessary. The algorithm may never crash, but your body will eventually throw its exceptions.
-
-```
-function findBalance() {
-  while (alive) {
-    cultivateMind();
-    strengthenBody();
-    embraceContradictions();
-  }
-}
-```
-
-Stone meets sky in perfect MA: a reminder that in a world of digital overwhelm, sometimes the honest dialogue between iron and muscle is the most elegant load balancer we'll ever need.
+My brain-wrecking code from 2020 is already vapor. The algorithm may never crash; your body will eventually throw its exceptions.
 
 ⭐⭐⭐⭐½ (4.5/5 barbells)
