@@ -1,5 +1,5 @@
 # Optional titles and dates for the pages in reading/, keyed by file name.
 # A page without an entry is still listed, titled from its file name.
 great-work-field-guide.html:
-  title: "Great Work, Mapped: a field guide to Paul Graham's essay"
+  title: "Great Work, Mapped"
   date: 2026-10-19
