@@ -29,6 +29,7 @@
                     <li><a href="{{ '/#me' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>About</a></li>
                     <li><a href="{{ '/#now' | relative_url }}" {% if page.url contains 'now' %}class="active"{% endif %}>Now</a></li>
                     <li><a href="{{ '/#articles' | relative_url }}" {% if page.url contains 'posts' %}class="active"{% endif %}>Articles</a></li>
+                    <li><a href="{{ '/reading/' | relative_url }}" {% if page.url contains 'reading' %}class="active"{% endif %}>Reading</a></li>
                 </ul>
             </nav>
         </div>

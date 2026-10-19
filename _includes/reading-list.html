@@ -1,0 +1,21 @@
+{%- comment -%}
+  Every .html page in reading/, newest first. A page is listed as soon as it's in the folder, titled from its
+  file name; an entry in _data/reading.yml (keyed by file name) gives it a proper title and a date.
+{%- endcomment -%}
+{%- assign files = site.static_files | where_exp: "f", "f.path contains '/reading/'" | where: "extname", ".html" -%}
+{%- capture keys -%}
+  {%- for f in files -%}
+    {%- assign m = site.data.reading[f.name] -%}
+    {{- m.date | date: "%Y-%m-%d" | default: "0000-00-00" -}}|{{- f.name -}};
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign keys = keys | split: ";" | sort | reverse -%}
+{%- for k in keys -%}
+  {%- assign name = k | split: "|" | last -%}
+  {%- assign m = site.data.reading[name] -%}
+  {%- assign fallback = name | remove: ".html" | replace: "-", " " | capitalize -%}
+  <div class="article-entry">
+    <span class="article-date">{% if m.date %}{{ m.date | date: "%Y-%m-%d" }}{% endif %}</span>
+    <a href="{{ '/reading/' | append: name | relative_url }}" class="article-title-link">{{ m.title | default: fallback }}</a>
+  </div>
+{%- endfor -%}
