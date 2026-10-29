@@ -15,4 +15,4 @@ I made two things to share it:
 - [The &gt;&gt; Director](https://ngnnah.github.io/I-And-AI/projects/live-desk/), a picture-book deck I demoed at work. Look for the easter eggs.
 - [Live desk setup](https://ngnnah.github.io/I-And-AI/projects/live-desk/setup/). One button copies a setup prompt; paste it into your agent and it installs the rules.
 
-Built and used with Claude Code. Codex and Amp should follow it too; I haven't tried them.
+Built and used with Claude Code. Codex and other coding agents should follow it too; I haven't tried them.
