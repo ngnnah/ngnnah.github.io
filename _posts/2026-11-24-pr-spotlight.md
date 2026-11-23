@@ -4,17 +4,20 @@ title: "PR Spotlight: a picture for every merged PR"
 date: 2026-11-24
 ---
 
-Code review is work nobody sees. A reviewer reads someone else's diff, catches the bug before it reaches prod, and the PR merges under the author's name.
+Code review is work nobody sees, so PR Spotlight comments on every merged PR with a picture of the people behind it and a short lesson from its diff, and the reviewers are the stars. Each picture takes a new art style and a story from the diff; everyone is an animal until they say yes to their own face. See the [deck](https://ngnnah.github.io/I-And-AI/projects/pr-spotlight/), or clone the [code](https://github.com/ngnnah/pr-spotlight) for your team.
 
-With PR Spotlight, every merged PR gets a comment with a picture of the people behind it and a short lesson from its diff: what it shipped, a thanks to the reviewer, a lesson and a tip. On a release, the reviewers are the stars.
-
-![A spotlight: a detective beekeeper holds up a honeycomb frame while a duck in a pinstripe suit, the reviewer's totem, leans in with a magnifying glass](/images/pr-spotlight.gif)
-
-The story in each picture comes from the diff: DuckDB turns into a duck godfather, and a big release into the golden spike of the first transcontinental railroad. The style changes every time. I built up 261 art styles, and the least-used one goes next, so a routine review gets a sprinkle of fun. Some spotlights are short looping GIFs.
-
-Everyone starts as an animal totem. A teammate is drawn from their own photos only after they say yes.
-
-It runs every 15 minutes on my Mac. Claude writes the idea and the caption, and the Codex CLI on my ChatGPT plan draws the picture, so there's no API key.
-
-- The picture-book deck: [PR Spotlight](https://ngnnah.github.io/I-And-AI/projects/pr-spotlight/).
-- The code, MIT licensed, to clone for your team: [ngnnah/pr-spotlight](https://github.com/ngnnah/pr-spotlight). Its README has one prompt to paste into Claude Code.
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:24px 0">
+  <img src="/images/pr-spotlight/beekeeper.gif" alt="A detective beekeeper holds up a honeycomb frame while a duck in a pinstripe suit leans in with a magnifying glass" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/storm.gif" alt="Woodblock-print storm: a lighthouse beam guides a small boat past the rocks" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/beam.gif" alt="Art deco poster: the lighthouse beam swings round onto the keeper as the ships raise flags" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/hats.gif" alt="The lighthouse keeper tries on hats at a mirror while a duck, a fox, an octopus and a crane cheer" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-1.jpg" alt="Risograph: a duck drives the golden spike on a railroad" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-2.jpg" alt="Flat editorial: a duck godfather seals an index" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-3.jpg" alt="Woodblock print: an octopus concierge with a single key" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-4.jpg" alt="Ligne claire: a gatekeeper checks a pass at a green gate" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-5.jpg" alt="One-color gouache: a lighthouse clears a doorway by the water" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-6.jpg" alt="Painted storybook: a crane clears a library card drawer" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-7.jpg" alt="Paper cutout: a fox detective and three little cars rolling into one truck" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-8.jpg" alt="Siesta light: one sealed crate sets sail on a friendly whale" loading="lazy" style="width:100%;border-radius:8px">
+  <img src="/images/pr-spotlight/spotlight-9.jpg" alt="Travel gouache: the same ship, one level up in a canal lock" loading="lazy" style="width:100%;border-radius:8px">
+</div>
