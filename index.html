@@ -23,6 +23,7 @@ layout: default
 {% assign latest_now = updates | last %}
 <section class="section" id="now">
   <div class="section-head">
+    <img class="stamp" src="/images/art/stamp-now.webp" alt="" width="40" height="40">
     <h2>Me now</h2>
     <span class="count">Updated {{ latest_now.date | date: "%b %-d, %Y" }}</span>
     <span class="rule"></span>
@@ -36,6 +37,7 @@ layout: default
 
 <section class="section" id="i-and-ai">
   <div class="section-head">
+    <img class="stamp" src="/images/art/stamp-i-and-ai.webp" alt="" width="40" height="40">
     <h2>I And AI</h2>
     <span class="count">Mini-projects built with AI</span>
     <span class="rule"></span>
@@ -43,6 +45,7 @@ layout: default
   </div>
   <div class="grid">
     <a class="card" href="{{ '/I-And-AI/projects/gaming/codenames/' | relative_url }}">
+      <img class="thumb" src="/images/art/signal-fires.webp" alt="" width="800" height="450" loading="lazy">
       <h3>Codenames</h3>
       <p>Two teams, two spymasters, one-word clues. Four ways to play, with
          real-time sync so everyone shares a board over a video call.</p>
@@ -52,6 +55,7 @@ layout: default
       </div>
     </a>
     <a class="card" href="{{ '/I-And-AI/projects/gaming/harmonies/' | relative_url }}">
+      <img class="thumb" src="/images/art/hex-valley.webp" alt="" width="800" height="450" loading="lazy">
       <h3>Harmonies</h3>
       <p>A calm solo build of the board game. Stack coloured tokens on a hex
          board to grow trees, mountains, fields and rivers, and earn suns.</p>
@@ -61,6 +65,7 @@ layout: default
       </div>
     </a>
     <a class="card" href="{{ '/I-And-AI/projects/pokemon-math-world/' | relative_url }}">
+      <img class="thumb" src="/images/art/trail-map.webp" alt="" width="800" height="450" loading="lazy">
       <h3>Pokémon Math World</h3>
       <p>Three difficulty tracks: addition and subtraction to 100,
          multiplication, division and word problems, with 40+ Pokémon and
@@ -71,6 +76,7 @@ layout: default
       </div>
     </a>
     <a class="card" href="{{ '/I-And-AI/projects/live-desk/setup/' | relative_url }}">
+      <img class="thumb" src="/images/art/caravans.webp" alt="" width="800" height="450" loading="lazy">
       <h3>Live desk</h3>
       <p>Each coding-agent session keeps one live page: its goal, a Status and
          a log of every reply. One button copies a setup prompt for your agent.</p>
@@ -84,6 +90,7 @@ layout: default
 
 <section class="section" id="writing">
   <div class="section-head">
+    <img class="stamp" src="/images/art/stamp-writing.webp" alt="" width="40" height="40">
     <h2>Writing</h2>
     <span class="count">{{ site.posts.size }} posts</span>
     <span class="rule"></span>
@@ -100,6 +107,7 @@ layout: default
 
 <section class="section" id="reading">
   <div class="section-head">
+    <img class="stamp" src="/images/art/stamp-reading.webp" alt="" width="40" height="40">
     <h2>Reading</h2>
     <span class="count">Guides and notes</span>
     <span class="rule"></span>

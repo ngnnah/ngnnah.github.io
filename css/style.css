@@ -51,6 +51,68 @@ img { max-width: 100%; height: auto; }
 
 .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
+/* --------------------------------------------------------------- art
+   Pictures from image-gen's site-art concept. The backdrop sits behind the
+   top of every page and fades into the navy; the road closes every page. */
+
+.backdrop {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(480px, 78vh, 700px);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+/* the picture takes the right two thirds, so the face stays clear of the intro's words */
+.backdrop img {
+  display: block;
+  width: 66vw;
+  height: 100%;
+  margin-left: auto;
+  object-fit: cover;
+  object-position: 70% 35%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 12%, #000 45%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 12%, #000 45%);
+  mask-composite: intersect;
+}
+/* a dark band under the top bar */
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22, 33, 62, 0.65) 0, rgba(22, 33, 62, 0) 90px);
+}
+.backdrop.faint { height: 460px; }
+.backdrop.faint img {
+  width: 100%;
+  opacity: 0.4;
+  object-position: right top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 25%, transparent);
+  mask-image: linear-gradient(to bottom, #000 25%, transparent);
+}
+.topbar, main, footer, .road { position: relative; z-index: 1; }
+
+.road {
+  height: clamp(90px, 15vw, 220px);
+  margin-top: 28px;
+  background: url("../images/art/long-road.webp") center 45% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
+}
+
+.section-head .stamp { width: 40px; height: 40px; flex: none; align-self: center; }
+
+.card .thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
 /* --------------------------------------------------------------- top bar */
 
 .topbar { border-bottom: 1px solid var(--edge); }
@@ -112,7 +174,7 @@ img { max-width: 100%; height: auto; }
   width: fit-content;
 }
 .intro .subtitle { color: var(--mute); font-size: 1.12rem; margin-bottom: 16px; }
-.intro p { color: var(--dim); max-width: 60ch; }
+.intro p { color: var(--dim); max-width: 50ch; }
 .intro p + p { margin-top: 10px; }
 
 /* Two photos, one frame: hover or tap shows the other. */
@@ -151,7 +213,7 @@ img { max-width: 100%; height: auto; }
 .section { margin-bottom: 44px; }
 .section-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   margin-bottom: 18px;
 }
@@ -353,7 +415,7 @@ a.card:hover .ext { color: var(--accent); }
 
 footer {
   text-align: center;
-  margin: 12px 0 40px;
+  margin: 0 auto 40px;
   color: var(--mute);
   font-size: 0.92rem;
 }
@@ -361,7 +423,16 @@ footer {
 /* ---------------------------------------------------------------- phone */
 
 @media (max-width: 640px) {
-  .intro { grid-template-columns: 1fr; gap: 20px; padding: 32px 0 36px; }
+  .backdrop { height: 360px; }
+  .backdrop img {
+    width: 100%;
+    object-position: 80% 30%;
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  }
+  .section-head:has(.more) .count { display: none; }
+  .intro { grid-template-columns: 1fr; gap: 20px; padding: 200px 0 36px; }
+  .section-head .stamp { width: 32px; height: 32px; }
   .portrait { width: 132px; }
   .intro h1 { font-size: 2.1rem; }
   .grid { grid-template-columns: 1fr; }

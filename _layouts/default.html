@@ -10,9 +10,22 @@
   <link rel="apple-touch-icon" href="{{ '/images/favicon1a.png' | relative_url }}">
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  {% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/art/orbit-face.webp' | relative_url }}" imagesrcset="{{ '/images/art/orbit-face-900.webp' | relative_url }} 900w, {{ '/images/art/orbit-face.webp' | relative_url }} 1672w" imagesizes="100vw">{% endif %}
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: '/images/art/share-home.jpg' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
   {% feed_meta %}
 </head>
 <body>
+  {%- comment -%} Art from image-gen's site-art concept: Nhat's face from orbit on the home page, as a contour map elsewhere. {%- endcomment %}
+  <div class="backdrop{% unless page.url == '/' %} faint{% endunless %}" aria-hidden="true">
+    {% if page.url == '/' %}<img src="{{ '/images/art/orbit-face.webp' | relative_url }}" srcset="{{ '/images/art/orbit-face-900.webp' | relative_url }} 900w, {{ '/images/art/orbit-face.webp' | relative_url }} 1672w" sizes="100vw" alt="" fetchpriority="high">
+    {% else %}<img src="{{ '/images/art/topo-face.webp' | relative_url }}" alt="">{% endif %}
+  </div>
+
   <header class="topbar">
     <div class="container">
       <a class="brand" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
@@ -32,6 +45,7 @@
     {{ content }}
   </main>
 
+  <div class="road" aria-hidden="true"></div>
   <footer class="container">
     <p>View source on <a href="https://github.com/ngnnah/ngnnah.github.io">GitHub</a></p>
   </footer>
