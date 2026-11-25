@@ -71,9 +71,9 @@ img { max-width: 100%; height: auto; }
   margin-left: auto;
   object-fit: cover;
   object-position: 70% 35%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 15%, #000 55%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 30%, #000 70%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 15%, #000 55%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 30%, #000 70%);
   mask-composite: intersect;
 }
 /* a dark band under the top bar, and a dark wash on the left under the intro's words */
@@ -212,9 +212,10 @@ a.mini:hover img { transform: scale(1.05); }
   color: #fff;
   font-weight: 800;
 }
-.intro .subtitle { color: var(--accent); font-size: 1.12rem; font-weight: 500; margin-bottom: 16px; }
-.intro p { color: var(--body); font-size: 1.04rem; max-width: 50ch; }
-.intro p + p { margin-top: 10px; }
+/* a short measure and calm greys, so the words end well before the picture */
+.intro .subtitle { color: #f0f3f8; font-size: 1.15rem; font-weight: 500; margin-bottom: 18px; }
+.intro p { color: #cfd6e2; font-size: 1.02rem; line-height: 1.7; max-width: 42ch; }
+.intro p + p { margin-top: 12px; }
 
 /* Two photos, one frame: hover or tap shows the other. */
 .portrait {
