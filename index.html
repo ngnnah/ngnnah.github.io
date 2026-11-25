@@ -27,7 +27,7 @@ layout: default
     <h2>Me now</h2>
     <span class="count">Updated {{ latest_now.date | date: "%b %-d, %Y" }}</span>
     <span class="rule"></span>
-    <a class="more" href="{{ '/updates/' | relative_url }}">Past updates</a>
+    <a class="more" href="{{ '/updates/' | relative_url }}">All updates <span aria-hidden="true">→</span></a>
   </div>
   <div class="card now">
     {% if latest_now.title %}<h3>{{ latest_now.title }}</h3>{% endif %}
@@ -41,7 +41,7 @@ layout: default
     <h2>I And AI</h2>
     <span class="count">Mini-projects built with AI</span>
     <span class="rule"></span>
-    <a class="more" href="{{ '/I-And-AI/' | relative_url }}">See all</a>
+    <a class="more" href="{{ '/I-And-AI/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
   </div>
   <div class="minis">
     <a class="mini" href="{{ '/I-And-AI/projects/gaming/codenames/' | relative_url }}" style="--x:18%">

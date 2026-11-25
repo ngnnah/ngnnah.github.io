@@ -66,22 +66,24 @@ img { max-width: 100%; height: auto; }
 /* the picture takes the right two thirds, so the face stays clear of the intro's words */
 .backdrop img {
   display: block;
-  width: 66vw;
+  width: 60vw;
   height: 100%;
   margin-left: auto;
   object-fit: cover;
   object-position: 70% 35%;
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 12%, #000 45%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 15%, #000 55%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 12%, #000 45%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent), linear-gradient(to right, transparent 15%, #000 55%);
   mask-composite: intersect;
 }
-/* a dark band under the top bar */
+/* a dark band under the top bar, and a dark wash on the left under the intro's words */
 .backdrop::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(22, 33, 62, 0.65) 0, rgba(22, 33, 62, 0) 90px);
+  background:
+    linear-gradient(180deg, rgba(22, 33, 62, 0.65) 0, rgba(22, 33, 62, 0) 90px),
+    linear-gradient(90deg, rgba(22, 33, 62, 0.9) 0, rgba(22, 33, 62, 0.75) 52%, rgba(22, 33, 62, 0) 72%);
 }
 .backdrop.faint { height: 460px; }
 .backdrop.faint img {
@@ -152,15 +154,16 @@ a.mini:hover img { transform: scale(1.05); }
 
 /* --------------------------------------------------------------- top bar */
 
-.topbar { border-bottom: 1px solid var(--edge); }
+/* a solid band, so the links read over the pictures behind the page top */
+.topbar { background: rgba(22, 33, 62, 0.86); border-bottom: 1px solid var(--edge); }
 .topbar .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 8px 20px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .topbar .brand {
   display: inline-flex;
@@ -168,26 +171,29 @@ a.mini:hover img { transform: scale(1.05); }
   gap: 10px;
   color: #fff;
   font-weight: 700;
-  font-size: 0.98rem;
+  font-size: 1rem;
   letter-spacing: -0.01em;
 }
 .topbar .brand img {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
   background: #f0f3f8;
   padding: 2px;
 }
-.topbar nav { display: flex; flex-wrap: wrap; gap: 4px 22px; }
-.topbar nav a {
-  color: var(--mute);
-  font-size: 0.92rem;
-  padding: 4px 0;
-  border-bottom: 2px solid transparent;
-}
-.topbar nav a:hover { color: #fff; text-decoration: none; }
-.topbar nav a[aria-current] { color: #fff; border-bottom-color: var(--accent); }
 .topbar .brand:hover { text-decoration: none; }
+.topbar nav { display: flex; flex-wrap: wrap; gap: 6px; }
+.topbar nav a {
+  color: #dfe5ee;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.topbar nav a:hover { color: #fff; text-decoration: none; background: rgba(255, 255, 255, 0.08); }
+.topbar nav a[aria-current] { color: #fff; background: rgba(0, 212, 255, 0.14); border-color: rgba(0, 212, 255, 0.5); }
 
 /* ------------------------------------------------------------- the intro */
 
@@ -203,15 +209,11 @@ a.mini:hover img { transform: scale(1.05); }
   line-height: 1.15;
   letter-spacing: -0.015em;
   margin-bottom: 6px;
-  /* I And AI's title gradient, so the two pages read as one */
-  background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  width: fit-content;
+  color: #fff;
+  font-weight: 800;
 }
-.intro .subtitle { color: var(--mute); font-size: 1.12rem; margin-bottom: 16px; }
-.intro p { color: var(--dim); max-width: 50ch; }
+.intro .subtitle { color: var(--accent); font-size: 1.12rem; font-weight: 500; margin-bottom: 16px; }
+.intro p { color: var(--body); font-size: 1.04rem; max-width: 50ch; }
 .intro p + p { margin-top: 10px; }
 
 /* Two photos, one frame: hover or tap shows the other. */
@@ -273,7 +275,20 @@ a.mini:hover img { transform: scale(1.05); }
   height: 1px;
   background: linear-gradient(90deg, var(--edge), transparent);
 }
-.section-head .more { font-size: 0.85rem; white-space: nowrap; }
+/* a section's "see the rest" link: a small solid pill, readable over the picture */
+.section-head .more {
+  flex: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  background: #1c2a4a;
+  border: 1px solid rgba(0, 212, 255, 0.45);
+  border-radius: 999px;
+  padding: 5px 12px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.section-head .more:hover { text-decoration: none; background: #23365f; border-color: var(--accent); }
 
 /* ------------------------------------------------------------- the cards */
 
@@ -479,6 +494,7 @@ footer {
     -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
     mask-image: linear-gradient(to bottom, #000 45%, transparent);
   }
+  .backdrop::after { background: linear-gradient(180deg, rgba(22, 33, 62, 0.65) 0, rgba(22, 33, 62, 0) 90px); }
   .section-head:has(.more) .count { display: none; }
   .minis { grid-auto-columns: 44%; }
   .intro { grid-template-columns: 1fr; gap: 20px; padding: 200px 0 36px; }
@@ -490,7 +506,8 @@ footer {
   .list a { grid-template-columns: 1fr; gap: 2px; padding: 14px 18px; }
   .page { padding-top: 32px; }
   .page-head h1 { font-size: 1.8rem; }
-  .topbar nav { gap: 4px 16px; }
+  .topbar nav { gap: 4px; }
+  .topbar nav a { font-size: 0.9rem; padding: 5px 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
