@@ -2,26 +2,20 @@
 layout: default
 ---
 
-<main class="container">
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
+<article class="page">
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </header>
 
-      {% if page.description %}
-      <div class="post-description">{{ page.description }}</div>
-      {% endif %}
+  {% if page.image %}
+  <figure class="post-image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}">
+  </figure>
+  {% endif %}
 
-      <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
-    </header>
+  <div class="prose">{{ content }}</div>
 
-    {% if page.image %}
-    <div class="post-image">
-      <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy" />
-    </div>
-    {% endif %}
-
-    <div class="post-content">{{ content }}</div>
-
-    <a href="{{ '/' | relative_url }}" class="back-to-home">← Back to home</a>
-  </article>
-</main>
+  <a class="back" href="{{ '/#writing' | relative_url }}">← All writing</a>
+</article>

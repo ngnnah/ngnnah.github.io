@@ -3,12 +3,13 @@ layout: default
 title: Reading
 ---
 
-<main class="container">
-  <h1>Reading</h1>
+<div class="page">
+  <header class="page-head">
+    <h1>Reading</h1>
+    <p class="lede">Guides and notes from my reading.</p>
+  </header>
 
-  <div class="content">
-    <p>Guides and notes from my reading.</p>
-    {% include reading-list.html %}
-    <a href="{{ '/' | relative_url }}" class="back-to-home">← Back to home</a>
-  </div>
-</main>
+  {% include reading-list.html %}
+
+  <a class="back" href="{{ '/' | relative_url }}">← Home</a>
+</div>

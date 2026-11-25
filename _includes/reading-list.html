@@ -10,12 +10,14 @@
   {%- endfor -%}
 {%- endcapture -%}
 {%- assign keys = keys | split: ";" | sort | reverse -%}
+<ul class="list">
 {%- for k in keys -%}
   {%- assign name = k | split: "|" | last -%}
   {%- assign m = site.data.reading[name] -%}
-  {%- assign fallback = name | remove: ".html" | replace: "-", " " | capitalize -%}
-  <div class="article-entry">
-    <span class="article-date">{% if m.date %}{{ m.date | date: "%Y-%m-%d" }}{% endif %}</span>
-    <a href="{{ '/reading/' | append: name | relative_url }}" class="article-title-link">{{ m.title | default: fallback }}</a>
-  </div>
-{%- endfor -%}
+  {%- assign fallback = name | remove: ".html" | replace: "-", " " | capitalize %}
+  <li><a href="{{ '/reading/' | append: name | relative_url }}">
+    <time>{% if m.date %}{{ m.date | date: "%b %-d, %Y" }}{% endif %}</time>
+    <span class="title">{{ m.title | default: fallback }}</span>
+  </a></li>
+{%- endfor %}
+</ul>

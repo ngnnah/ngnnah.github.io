@@ -2,77 +2,107 @@
 layout: default
 ---
 
-<main class="container">
-  <section id="me" class="section">
-    <h2>About Me</h2>
-    <div class="content">
-      <div class="profile-container">
-        <div class="hover-control hover-left"></div>
-        <div class="hover-control hover-right"></div>
-        <img
-          src="/images/profile.jpeg"
-          alt="Nhat Nguyen"
-          class="profile-image profile-image-main"
-        />
-        <img
-          src="/images/profile-alt.jpeg"
-          alt="Nhat Nguyen alternate"
-          class="profile-image profile-image-alt"
-        />
+<section class="intro" id="about" aria-label="About">
+  <button class="portrait" type="button" aria-pressed="false" aria-label="Show Nhat's face as a glacier">
+    <img src="/images/profile-sm.jpg" alt="Nhat Nguyen in a grey beanie" width="360" height="450">
+    <img src="/images/profile-glacier.jpg" alt="Nhat's face as a glacier seen from above, made with an image model" width="327" height="409" loading="lazy">
+  </button>
+  <div>
+    <h1>Nhat Nguyen</h1>
+    <p class="subtitle">Geospatial data engineer based in Florida.</p>
+    <p>Fascinated by light and air, tree and wave, stories and myths.</p>
+    <p>Started out debugging PASCAL on paper as a kid in Vietnam; graduated
+       from MIT in 2021. Working at Ready.net, currently building Global
+       Utility Serviceable Location Registry.</p>
+    <p>I write about technology, personal development, travel, and occasional
+       philosophical musings.</p>
+  </div>
+</section>
+
+{% assign updates = site.data.updates | sort: 'date' %}
+{% assign latest_now = updates | last %}
+<section class="section" id="now">
+  <div class="section-head">
+    <h2>Me now</h2>
+    <span class="count">Updated {{ latest_now.date | date: "%b %-d, %Y" }}</span>
+    <span class="rule"></span>
+    <a class="more" href="{{ '/updates/' | relative_url }}">Past updates</a>
+  </div>
+  <div class="card now">
+    {% if latest_now.title %}<h3>{{ latest_now.title }}</h3>{% endif %}
+    <div class="prose">{{ latest_now.content | markdownify }}</div>
+  </div>
+</section>
+
+<section class="section" id="i-and-ai">
+  <div class="section-head">
+    <h2>I And AI</h2>
+    <span class="count">Mini-projects built with AI</span>
+    <span class="rule"></span>
+    <a class="more" href="{{ '/I-And-AI/' | relative_url }}">See all</a>
+  </div>
+  <div class="grid">
+    <a class="card" href="{{ '/I-And-AI/projects/gaming/codenames/' | relative_url }}">
+      <h3>Codenames</h3>
+      <p>Two teams, two spymasters, one-word clues. Four ways to play, with
+         real-time sync so everyone shares a board over a video call.</p>
+      <div class="meta">
+        <span class="tag">Multiplayer</span>
+        <span class="tag plain">4 game modes</span>
       </div>
-
-      <p>Geospatial Data Engineer based in Florida.</p>
-
-      <p>
-        Fascinated by light and air, tree and wave, stories and myths.
-      </p>
-
-      <p>
-        Started out debugging PASCAL on paper as a kid in Vietnam; graduated
-        from MIT in 2021. Working at Ready.net, currently building Global
-        Utility Serviceable Location Registry.
-      </p>
-
-      <p>
-        I write about technology, personal development, travel, and occasional
-        philosophical musings.
-      </p>
-    </div>
-  </section>
-
-  <section id="now" class="section">
-    <h2>Me Now</h2>
-    <div class="content">
-      {% assign updates = site.data.updates | sort: 'date' %} {% assign
-      latest_now = updates | last %} {% if latest_now.title %}
-      <h3 class="now-headline">{{ latest_now.title }}</h3>
-      {% endif %}
-
-      <div class="now-content">{{ latest_now.content | markdownify }}</div>
-
-      <p class="meta">
-        Updated {{ latest_now.date | date: "%B %-d, %Y" }} ·
-        <a href="/updates">See past updates</a>
-      </p>
-    </div>
-  </section>
-
-  <section id="articles" class="section">
-    <h2>Newest Articles</h2>
-    <div class="content">
-      {% for post in site.posts %}
-      <div class="article-entry">
-        <span class="article-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url | relative_url }}" class="article-title-link"
-          >{{ post.title }}</a
-        >
+    </a>
+    <a class="card" href="{{ '/I-And-AI/projects/gaming/harmonies/' | relative_url }}">
+      <h3>Harmonies</h3>
+      <p>A calm solo build of the board game. Stack coloured tokens on a hex
+         board to grow trees, mountains, fields and rivers, and earn suns.</p>
+      <div class="meta">
+        <span class="tag">Solo</span>
+        <span class="tag plain">Board game</span>
       </div>
-      {% endfor %}
-    </div>
-  </section>
+    </a>
+    <a class="card" href="{{ '/I-And-AI/projects/pokemon-math-world/' | relative_url }}">
+      <h3>Pokémon Math World</h3>
+      <p>Three difficulty tracks: addition and subtraction to 100,
+         multiplication, division and word problems, with 40+ Pokémon and
+         saved progress.</p>
+      <div class="meta">
+        <span class="tag">Grade 1–2</span>
+        <span class="tag plain">Learning game</span>
+      </div>
+    </a>
+    <a class="card" href="{{ '/I-And-AI/projects/live-desk/setup/' | relative_url }}">
+      <h3>Live desk</h3>
+      <p>Each coding-agent session keeps one live page: its goal, a Status and
+         a log of every reply. One button copies a setup prompt for your agent.</p>
+      <div class="meta">
+        <span class="tag">Coding agents</span>
+        <span class="tag plain">Setup page</span>
+      </div>
+    </a>
+  </div>
+</section>
 
-  <section id="reading" class="section">
+<section class="section" id="writing">
+  <div class="section-head">
+    <h2>Writing</h2>
+    <span class="count">{{ site.posts.size }} posts</span>
+    <span class="rule"></span>
+  </div>
+  <ul class="list">
+    {% for post in site.posts %}
+    <li><a href="{{ post.url | relative_url }}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <span class="title">{{ post.title }}</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section" id="reading">
+  <div class="section-head">
     <h2>Reading</h2>
-    <div class="content">{% include reading-list.html %}</div>
-  </section>
-</main>
+    <span class="count">Guides and notes</span>
+    <span class="rule"></span>
+  </div>
+  {% include reading-list.html %}
+</section>
