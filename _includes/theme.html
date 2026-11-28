@@ -17,6 +17,9 @@
         button.setAttribute("title", "Switch to " + next);
       }
     }
+    // Holiday lights from December 1 to January 31; ?season=holiday previews them.
+    var month = new Date().getMonth();
+    if (month === 11 || month === 0 || /[?&]season=holiday/.test(location.search)) root.setAttribute("data-season", "holiday");
     var chosen = null;
     try { chosen = sessionStorage.getItem("theme"); } catch (e) {}
     var hour = new Date().getHours();
