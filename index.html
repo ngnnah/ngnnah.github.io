@@ -28,10 +28,17 @@ layout: default
 {%- endcomment %}
 <section class="atlas" aria-label="Map of this site">
   <div class="map-scroll">
-    <div class="map">
+    <div class="map" data-route="237,222 215,225 190,234 172,255 170,272 192,285 215,298 232,310 237,322 232,342 215,362 197,382 187,405 190,435 202,460 205,510 225,565 300,590 340,590 400,586 450,589 487,586 515,576 535,565 570,556 595,552 640,549 679,547 705,546 731,541 750,527 775,512 782,490 790,460 792,446 802,427 825,415 845,392 840,377 820,355 822,343 835,340; 500,585 505,603 520,613 530,622 531,637 542,656 556,665 598,681 630,687 676,693 726,696 780,692 831,683 899,676 972,684 1007,684 1046,677 1082,671 1117,666 1190,665 1259,664 1304,658 1353,647 1404,642 1440,640 1478,643 1500,644" data-compass="122,826,82">
       <img src="/images/art/map-home.webp" srcset="/images/art/map-home-960.webp 960w, /images/art/map-home.webp 1672w"
            sizes="(max-width: 760px) 900px, min(1400px, 100vw)" width="1672" height="941" fetchpriority="high"
            alt="A painted map of a coast: a camp on a wooded ridge, a harbour town with a printing house, a lighthouse with a library, misty uncharted hills, a great wave, and a ship sailing off toward another land">
+      <img class="map-night" src="/images/art/map-home-night.webp" srcset="/images/art/map-home-night-960.webp 960w, /images/art/map-home-night.webp 1672w"
+           sizes="(max-width: 760px) 900px, min(1400px, 100vw)" width="1672" height="941" alt="" loading="lazy">
+      <span class="glow" style="--x:55.3%;--y:39.5%;--w:3.6%;--h:6.4%;--d:0s;--t:6s"></span>
+      <span class="glow" style="--x:61.9%;--y:39.1%;--w:10.2%;--h:6.4%;--d:0.8s;--t:5.4s"></span>
+      <span class="glow" style="--x:18.5%;--y:21.8%;--w:7.8%;--h:9.6%;--d:2.2s;--t:6.6s"></span>
+      <span class="glow" style="--x:23.1%;--y:20.2%;--w:2.7%;--h:4.8%;--d:3.4s;--t:5s"></span>
+      <span class="glow" style="--x:20.3%;--y:57.4%;--w:7.2%;--h:9.6%;--d:4.6s;--t:6.2s"></span>
       <a class="pin region" style="--x:20.0%;--y:26.8%" href="#now">Now</a>
       <a class="pin region" style="--x:20.5%;--y:64.5%" href="#writing">Writing</a>
       <a class="pin region" style="--x:54.0%;--y:57.7%" href="#reading">Reading</a>
@@ -46,7 +53,7 @@ layout: default
 {% assign latest_now = updates | last %}
 <section class="section" id="now">
   <div class="section-head">
-    <img class="stamp" src="/images/art/stamp-now.webp" alt="" width="40" height="40">
+    <img class="stamp" src="/images/art/stamp-now-map.webp" alt="" width="40" height="40">
     <h2>Me now</h2>
     <span class="count">Updated {{ latest_now.date | date: "%b %-d, %Y" }}</span>
     <span class="rule"></span>
@@ -60,7 +67,7 @@ layout: default
 
 <section class="section" id="i-and-ai">
   <div class="section-head">
-    <img class="stamp" src="/images/art/stamp-i-and-ai.webp" alt="" width="40" height="40">
+    <img class="stamp" src="/images/art/stamp-i-and-ai-map.webp" alt="" width="40" height="40">
     <h2>I And AI</h2>
     <span class="count">Mini-projects built with AI</span>
     <span class="rule"></span>
@@ -92,7 +99,7 @@ layout: default
 
 <section class="section" id="writing">
   <div class="section-head">
-    <img class="stamp" src="/images/art/stamp-writing.webp" alt="" width="40" height="40">
+    <img class="stamp" src="/images/art/stamp-writing-map.webp" alt="" width="40" height="40">
     <h2>Writing</h2>
     <span class="count">{{ site.posts.size }} posts</span>
     <span class="rule"></span>
@@ -109,7 +116,7 @@ layout: default
 
 <section class="section" id="reading">
   <div class="section-head">
-    <img class="stamp" src="/images/art/stamp-reading.webp" alt="" width="40" height="40">
+    <img class="stamp" src="/images/art/stamp-reading-map.webp" alt="" width="40" height="40">
     <h2>Reading</h2>
     <span class="count">Guides and notes</span>
     <span class="rule"></span>
