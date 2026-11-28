@@ -17,9 +17,9 @@
         button.setAttribute("title", "Switch to " + next);
       }
     }
-    // Holiday lights from December 1 to January 31; ?season=holiday previews them.
-    var month = new Date().getMonth();
-    if (month === 11 || month === 0 || /[?&]season=holiday/.test(location.search)) root.setAttribute("data-season", "holiday");
+    // Holiday lights from November 28 to January 31; ?season=holiday previews them.
+    var now = new Date(), month = now.getMonth();
+    if (month === 11 || month === 0 || (month === 10 && now.getDate() >= 28) || /[?&]season=holiday/.test(location.search)) root.setAttribute("data-season", "holiday");
     var chosen = null;
     try { chosen = sessionStorage.getItem("theme"); } catch (e) {}
     var hour = new Date().getHours();
