@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
-  <meta name="theme-color" content="#16213e">
+  <meta name="theme-color" content="#141e32">
+  {% include theme.html %}
   <link rel="icon" type="image/png" href="{{ '/images/favicon1a.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/images/favicon1a.png' | relative_url }}">
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
-  {% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/art/orbit-face.webp' | relative_url }}" imagesrcset="{{ '/images/art/orbit-face-900.webp' | relative_url }} 900w, {{ '/images/art/orbit-face.webp' | relative_url }} 1672w" imagesizes="100vw">{% endif %}
+  {% if page.url == '/' %}<link rel="preload" as="image" href="{{ '/images/art/map-home.webp' | relative_url }}" imagesrcset="{{ '/images/art/map-home-960.webp' | relative_url }} 960w, {{ '/images/art/map-home.webp' | relative_url }} 1672w" imagesizes="(max-width: 760px) 900px, min(1400px, 100vw)">{% endif %}
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
@@ -20,11 +21,10 @@
   {% feed_meta %}
 </head>
 <body>
-  {%- comment -%} Art from image-gen's site-art concept: Nhat's face from orbit on the home page, as a contour map elsewhere. {%- endcomment %}
-  <div class="backdrop{% unless page.url == '/' %} faint{% endunless %}" aria-hidden="true">
-    {% if page.url == '/' %}<img src="{{ '/images/art/orbit-face.webp' | relative_url }}" srcset="{{ '/images/art/orbit-face-900.webp' | relative_url }} 900w, {{ '/images/art/orbit-face.webp' | relative_url }} 1672w" sizes="100vw" alt="" fetchpriority="high">
-    {% else %}<img src="{{ '/images/art/topo-face.webp' | relative_url }}" alt="">{% endif %}
-  </div>
+  {%- comment -%} Art from image-gen: the home page's first screen is its map (site-map v6, in index.html); other pages keep Nhat's face as a contour map behind their top. {%- endcomment %}
+  {% unless page.url == '/' %}<div class="backdrop faint" aria-hidden="true">
+    <img src="{{ '/images/art/topo-face.webp' | relative_url }}" alt="">
+  </div>{% endunless %}
 
   <header class="topbar">
     <div class="container">
@@ -37,6 +37,7 @@
         <a href="{{ '/#writing' | relative_url }}"{% if page.layout == 'post' %} aria-current="page"{% endif %}>Writing</a>
         <a href="{{ '/reading/' | relative_url }}"{% if page.url contains '/reading' %} aria-current="page"{% endif %}>Reading</a>
         <a href="{{ '/I-And-AI/' | relative_url }}">I And AI</a>
+        {% include theme-switch.html %}
       </nav>
     </div>
   </header>

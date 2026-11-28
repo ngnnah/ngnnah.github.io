@@ -1,0 +1,35 @@
+<script>
+  /* Golden hour (light) by day and blue hour (dark) by night, in the visitor's
+     own time zone; the switch in the top bar overrides it for this visit.
+     Runs in the head so the page never flashes the other theme. The same
+     script is inline in I And AI's public/index.html; change both together. */
+  (function () {
+    var root = document.documentElement;
+    var meta = { light: "#f6ecd8", dark: "#141e32" };
+    function apply(theme) {
+      root.setAttribute("data-theme", theme);
+      var tag = document.querySelector('meta[name="theme-color"]');
+      if (tag) tag.setAttribute("content", meta[theme]);
+      var button = document.querySelector(".theme-switch");
+      if (button) {
+        var next = theme === "light" ? "blue hour (dark)" : "golden hour (light)";
+        button.setAttribute("aria-label", "Switch to " + next);
+        button.setAttribute("title", "Switch to " + next);
+      }
+    }
+    var chosen = null;
+    try { chosen = sessionStorage.getItem("theme"); } catch (e) {}
+    var hour = new Date().getHours();
+    apply(chosen === "light" || chosen === "dark" ? chosen : (hour >= 6 && hour < 18 ? "light" : "dark"));
+    document.addEventListener("DOMContentLoaded", function () {
+      var button = document.querySelector(".theme-switch");
+      if (!button) return;
+      apply(root.getAttribute("data-theme"));
+      button.addEventListener("click", function () {
+        var theme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        try { sessionStorage.setItem("theme", theme); } catch (e) {}
+        apply(theme);
+      });
+    });
+  })();
+</script>
