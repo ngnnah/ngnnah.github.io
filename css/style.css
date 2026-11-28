@@ -160,14 +160,14 @@ img { max-width: 100%; height: auto; }
   mask-image: linear-gradient(to bottom, #000 25%, transparent);
 }
 /* by day the wash would show as a pale box on the lighter paper; the faint face reads without it */
-[data-theme="light"] .backdrop::after { display: none; }
+[data-theme="light"] .backdrop.faint::after { display: none; }
 [data-theme="light"] .backdrop.faint img { opacity: 0.3; }
 .topbar, main, footer, .road { position: relative; z-index: 1; }
 
 .road {
   height: clamp(90px, 15vw, 220px);
   margin-top: 28px;
-  background: url("../images/art/shore-strip.webp") center 45% / cover no-repeat;
+  background: url("../images/art/long-road.webp") center 45% / cover no-repeat;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
 }
@@ -376,7 +376,8 @@ html { overflow-x: clip; }
   font-weight: 800;
 }
 .intro .subtitle { color: var(--ink); font-size: 1.15rem; font-weight: 500; margin-bottom: 12px; }
-.intro p { color: var(--body); font-size: 1.02rem; line-height: 1.6; max-width: 68ch; }
+.intro p { color: var(--body); font-size: 1.02rem; line-height: 1.6; max-width: 46ch; }
+/* short lines, so the words end before the orbit face on the right */
 .intro p + p { margin-top: 8px; }
 
 /* Two photos, one frame: hover or tap shows the other. */
@@ -669,7 +670,7 @@ footer {
   .backdrop::after { background: linear-gradient(180deg, rgb(var(--wash) / 0.65) 0, rgb(var(--wash) / 0) 90px); }
   .section-head:has(.more) .count { display: none; }
   .minis { grid-auto-columns: 44%; }
-  .intro { grid-template-columns: 1fr; gap: 20px; padding: 28px 0 28px; }
+  .intro { grid-template-columns: 1fr; gap: 20px; padding: 200px 0 28px; }
   .section-head .stamp { width: 32px; height: 32px; }
   .portrait { width: 132px; }
   .intro h1 { font-size: 2.1rem; }

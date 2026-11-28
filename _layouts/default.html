@@ -21,10 +21,11 @@
   {% feed_meta %}
 </head>
 <body>
-  {%- comment -%} Art from image-gen: the home page's first screen is its map (site-map v6, in index.html); other pages keep Nhat's face as a contour map behind their top. {%- endcomment %}
-  {% unless page.url == '/' %}<div class="backdrop faint" aria-hidden="true">
-    <img src="{{ '/images/art/topo-face.webp' | relative_url }}" alt="">
-  </div>{% endunless %}
+  {%- comment -%} Art from image-gen, Nhat's own touches: on the home page his face seen from orbit, city lights on a night coast, behind the intro above the map; elsewhere his face as a contour map behind the top. {%- endcomment %}
+  <div class="backdrop{% unless page.url == '/' %} faint{% endunless %}" aria-hidden="true">
+    {% if page.url == '/' %}<img src="{{ '/images/art/orbit-face.webp' | relative_url }}" srcset="{{ '/images/art/orbit-face-900.webp' | relative_url }} 900w, {{ '/images/art/orbit-face.webp' | relative_url }} 1672w" sizes="60vw" alt="">
+    {% else %}<img src="{{ '/images/art/topo-face.webp' | relative_url }}" alt="">{% endif %}
+  </div>
 
   <header class="topbar">
     <div class="container">
