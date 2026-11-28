@@ -1,0 +1,69 @@
+/* Sticker decor for the home page: nine "ages" (small, little to grown up as you scroll)
+   and eight "now" stickers (bigger, glowing, bobbing) in the side margins.
+   Placement is done by js/stickers.js; this file only styles. */
+
+.stickers {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none;           /* the layer never blocks the page */
+  z-index: 0;
+}
+.stickers .stk {
+  position: absolute; left: 0; top: 0;
+  height: auto;
+  display: none;                  /* shown once the script has placed it */
+  pointer-events: auto;           /* so hover and the title tooltip work */
+  --r: 0deg; --dy: 0px;
+  transform: translateY(var(--dy)) rotate(var(--r));
+  transition: transform 0.35s cubic-bezier(.2, .8, .2, 1), filter 0.35s;
+  will-change: transform;
+  user-select: none; -webkit-user-drag: none;
+}
+.stickers .stk.on { display: block; }
+
+/* ages: quiet, like stickers stuck on a laptop lid */
+.stickers .stk-age {
+  filter: drop-shadow(0 2px 4px rgb(0 0 0 / 0.28));
+  opacity: 0.94;
+}
+
+/* now: bigger, a soft gold ring that follows the die-cut edge, a slow bob */
+.stickers .stk-now {
+  filter: drop-shadow(0 0 3px rgb(var(--acc) / 0.85))
+          drop-shadow(0 0 14px rgb(var(--acc) / 0.5))
+          drop-shadow(0 6px 10px rgb(0 0 0 / 0.25));
+  animation: sticker-bob 5.5s ease-in-out infinite;
+  animation-delay: var(--bob-delay, 0s);
+}
+.stickers .stk-now:nth-of-type(odd)  { --bob-delay: -2.2s; animation-duration: 6.2s; }
+.stickers .stk-now:nth-of-type(3n)   { --bob-delay: -4s; }
+@keyframes sticker-bob {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -6px; }
+}
+
+/* hover: straighten and lift a little */
+.stickers .stk:hover {
+  transform: translateY(calc(var(--dy) - 5px)) rotate(0deg) scale(1.05);
+  opacity: 1;
+}
+.stickers .stk-now:hover {
+  filter: drop-shadow(0 0 3px rgb(var(--acc) / 1))
+          drop-shadow(0 0 20px rgb(var(--acc) / 0.75))
+          drop-shadow(0 10px 14px rgb(0 0 0 / 0.3));
+}
+
+/* light theme: the dark halo reads heavy on cream, soften it */
+[data-theme="light"] .stickers .stk-age { filter: drop-shadow(0 2px 3px rgb(80 50 20 / 0.28)); }
+[data-theme="light"] .stickers .stk-now {
+  filter: drop-shadow(0 0 3px rgb(var(--acc) / 0.8))
+          drop-shadow(0 0 12px rgb(var(--acc) / 0.45))
+          drop-shadow(0 5px 8px rgb(80 50 20 / 0.25));
+}
+
+/* the margins are too narrow below this; the script also hides what doesn't fit */
+@media (max-width: 1239px) { .stickers { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .stickers .stk-now { animation: none; }
+  .stickers .stk { transition: none; }
+}

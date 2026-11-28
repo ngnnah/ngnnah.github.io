@@ -1,0 +1,30 @@
+{%- comment -%}
+  Sticker decor for the home page (see css/stickers.css, js/stickers.js).
+  Put right before </main>, home page only:  {% if page.url == '/' %}{% include stickers.html %}{% endif %}
+  Ages (small, top to bottom = little to grown up): data-p is how far down the page, 0 to 1,
+  data-side is l or r, data-r the tilt in degrees, data-k the scroll drift.
+  Now (bigger, glowing, bobbing): data-sec is the section it sits beside, data-at how far down
+  that section, 0 to 1. data-w is the width wanted in px; the script shrinks it to fit the margin.
+  To swap the Now sheet, re-cut it: python3 -I _tools/cut-stickers.py <sheet> 4x2 now
+{%- endcomment -%}
+<div class="stickers" aria-hidden="true">
+  {%- assign p = '/images/stickers/' -%}
+  <img class="stk stk-age" src="{{ p | append: 'age-01.webp' | relative_url }}" alt="" title="Toddler, a kite in his hands" width="275" height="360" loading="lazy" data-p="0.01" data-side="l" data-w="84"  data-r="-5" data-k="0.03">
+  <img class="stk stk-age" src="{{ p | append: 'age-02.webp' | relative_url }}" alt="" title="A boy writing code on paper" width="241" height="360" loading="lazy" data-p="0.12" data-side="r" data-w="86"  data-r="4"  data-k="-0.02">
+  <img class="stk stk-age" src="{{ p | append: 'age-03.webp' | relative_url }}" alt="" title="Reading under the blanket with a torch" width="284" height="360" loading="lazy" data-p="0.25" data-side="l" data-w="90"  data-r="-3" data-k="0.025">
+  <img class="stk stk-age" src="{{ p | append: 'age-04.webp' | relative_url }}" alt="" title="Teen on a bike" width="266" height="360" loading="lazy" data-p="0.37" data-side="r" data-w="94"  data-r="6"  data-k="-0.03">
+  <img class="stk stk-age" src="{{ p | append: 'age-05.webp' | relative_url }}" alt="" title="Studying late" width="277" height="360" loading="lazy" data-p="0.50" data-side="l" data-w="96" data-r="-4" data-k="0.02">
+  <img class="stk stk-age" src="{{ p | append: 'age-06.webp' | relative_url }}" alt="" title="MIT" width="259" height="360" loading="lazy" data-p="0.62" data-side="r" data-w="100" data-r="3"  data-k="-0.025">
+  <img class="stk stk-age" src="{{ p | append: 'age-07.webp' | relative_url }}" alt="" title="Graduation" width="263" height="360" loading="lazy" data-p="0.74" data-side="l" data-w="104" data-r="-6" data-k="0.03">
+  <img class="stk stk-age" src="{{ p | append: 'age-08.webp' | relative_url }}" alt="" title="Young engineer at a map screen" width="274" height="360" loading="lazy" data-p="0.86" data-side="r" data-w="106" data-r="4"  data-k="-0.02">
+  <img class="stk stk-age" src="{{ p | append: 'age-09.webp' | relative_url }}" alt="" title="Today, backpack and map" width="194" height="360" loading="lazy" data-p="0.97" data-side="l" data-w="108" data-r="-3" data-k="0.025">
+
+  <img class="stk stk-now" src="{{ p | append: 'now-07.webp' | relative_url }}" alt="" title="Reading maps for a living" width="243" height="360" loading="lazy" data-sec="#about"        data-at="0.30" data-side="l" data-w="120" data-r="-4" data-k="0.02">
+  <img class="stk stk-now" src="{{ p | append: 'now-02.webp' | relative_url }}" alt="" title="Writing code" width="240" height="360" loading="lazy" data-sec="#about"        data-at="0.85" data-side="r" data-w="124" data-r="3"  data-k="-0.02">
+  <img class="stk stk-now" src="{{ p | append: 'now-01.webp' | relative_url }}" alt="" title="Conducting coding agents" width="243" height="360" loading="lazy" data-sec="#now"          data-at="0.10" data-side="r" data-w="130" data-r="4"  data-k="-0.025">
+  <img class="stk stk-now" src="{{ p | append: 'now-05.webp' | relative_url }}" alt="" title="Motorcycle trip" width="240" height="360" loading="lazy" data-sec="#now"          data-at="0.90" data-side="l" data-w="124" data-r="-3" data-k="0.02">
+  <img class="stk stk-now" src="{{ p | append: 'now-08.webp' | relative_url }}" alt="" title="Teaching a little creature to count" width="254" height="360" loading="lazy" data-sec="#i-and-ai"    data-at="0.50" data-side="r" data-w="124" data-r="3"  data-k="-0.02">
+  <img class="stk stk-now" src="{{ p | append: 'now-06.webp' | relative_url }}" alt="" title="Street photography" width="239" height="360" loading="lazy" data-sec="#writing"      data-at="0.30" data-side="l" data-w="120" data-r="-4" data-k="0.025">
+  <img class="stk stk-now" src="{{ p | append: 'now-03.webp' | relative_url }}" alt="" title="At a hot spring" width="249" height="360" loading="lazy" data-sec="#writing"      data-at="0.55" data-side="r" data-w="130" data-r="3"  data-k="-0.02">
+  <img class="stk stk-now" src="{{ p | append: 'now-04.webp' | relative_url }}" alt="" title="Reading" width="246" height="360" loading="lazy" data-sec="#reading"      data-at="0.20" data-side="l" data-w="124" data-r="-3" data-k="0.02">
+</div>

@@ -19,6 +19,7 @@
   <meta property="og:image" content="{{ page.image | default: '/images/art/share-home.jpg' | absolute_url }}">
   <meta name="twitter:card" content="summary_large_image">
   {% feed_meta %}
+  {% if page.url == '/' %}<link rel="stylesheet" href="{{ '/css/stickers.css' | relative_url }}">{% endif %}
 </head>
 <body>
   {%- comment -%} Art from image-gen, Nhat's own touches: on the home page his face seen from orbit, city lights on a night coast, behind the intro above the map; elsewhere his face as a contour map behind the top. {%- endcomment %}
@@ -45,6 +46,7 @@
 
   <main class="container">
     {{ content }}
+    {% if page.url == '/' %}{% include stickers.html %}{% endif %}
   </main>
 
   <div class="road" aria-hidden="true"></div>
@@ -53,5 +55,6 @@
   </footer>
 
   <script src="{{ '/js/main.js' | relative_url }}" defer></script>
+  {% if page.url == '/' %}<script src="{{ '/js/stickers.js' | relative_url }}" defer></script>{% endif %}
 </body>
 </html>
