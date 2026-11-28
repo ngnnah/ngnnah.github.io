@@ -163,6 +163,8 @@ img { max-width: 100%; height: auto; }
 [data-theme="light"] .backdrop.faint::after { display: none; }
 [data-theme="light"] .backdrop.faint img { opacity: 0.3; }
 .topbar, main, footer, .road { position: relative; z-index: 1; }
+/* the foot: Nhat's long night road by day, the dusk shoreline by night */
+[data-theme="dark"] .road { background-image: url("../images/art/shore-strip.webp"); }
 
 .road {
   height: clamp(90px, 15vw, 220px);
