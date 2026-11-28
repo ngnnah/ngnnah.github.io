@@ -120,3 +120,24 @@ document.querySelectorAll(".portrait").forEach(function (button) {
     }
   });
 })();
+
+// On the home page the top bar shows where you are: the nav link of the
+// section in view lights up as you scroll (Now, Writing, Reading).
+(function () {
+  var links = {
+    now: document.querySelector('.topbar nav a[href$="#now"]'),
+    writing: document.querySelector('.topbar nav a[href$="#writing"]'),
+    reading: document.querySelector('.topbar nav a[href$="/reading/"]')
+  };
+  var sections = ["now", "writing", "reading"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+  var seen = {};
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
+    var current = sections.filter(function (s) { return seen[s.id]; })[0];
+    Object.keys(links).forEach(function (id) {
+      if (links[id]) links[id].classList.toggle("here", !!current && current.id === id);
+    });
+  }, { rootMargin: "-80px 0px -55% 0px" });
+  sections.forEach(function (s) { io.observe(s); });
+})();
