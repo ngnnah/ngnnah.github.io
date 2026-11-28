@@ -20,25 +20,23 @@ layout: default
 </section>
 
 {%- comment -%}
-  The map: image-gen's site-map v6-home-regions (5/5). Each pin sits on one of
-  the picture's blank banners; --x and --y are the banner's centre as a share of
-  the picture, measured on the 1672 x 941 original. The sections below repeat
-  every link, for glancing and for screen readers.
+  The map: image-gen's site-map v7-home-sections. It is the site's navigation:
+  one banner per fixed section, never a single post, so new writing never needs
+  a new map; the misty hills are left uncharted for a section to come. Each pin
+  sits on a blank banner; --x and --y are the banner's centre as a share of the
+  picture, measured on the 1672 x 941 original.
 {%- endcomment %}
 <section class="atlas" aria-label="Map of this site">
   <div class="map-scroll">
     <div class="map">
       <img src="/images/art/map-home.webp" srcset="/images/art/map-home-960.webp 960w, /images/art/map-home.webp 1672w"
            sizes="(max-width: 760px) 900px, min(1400px, 100vw)" width="1672" height="941" fetchpriority="high"
-           alt="A painted map of a coast: a camp on a wooded ridge, a harbour town with a printing house, a lighthouse with a library, a hot spring, a forge and a hermitage in misty ink-painted hills, a great wave, and a ship sailing off toward another land">
-      <a class="pin" style="--x:15.1%;--y:26.8%" href="#now">Now</a>
-      <a class="pin" style="--x:15.6%;--y:64.2%" href="#writing">Writing</a>
-      <a class="pin" style="--x:48.6%;--y:62.7%" href="{{ '/reading/' | relative_url }}">Reading</a>
-      <a class="pin" style="--x:46.4%;--y:33.2%" href="{{ '/2025/04/07/onsen.html' | relative_url }}">Onsen</a>
-      <a class="pin" style="--x:67.8%;--y:30.0%" href="{{ '/2025/05/07/book-review-sun-and-steel.html' | relative_url }}">Sun &amp; Steel</a>
-      <a class="pin" style="--x:86.0%;--y:20.1%" href="{{ '/2025/03/02/digital-minimalism.html' | relative_url }}">Minimalism</a>
-      <a class="pin" style="--x:85.3%;--y:55.2%" href="#about">About me</a>
-      <a class="pin" style="--x:64.6%;--y:77.5%" href="{{ '/I-And-AI/' | relative_url }}">I And AI</a>
+           alt="A painted map of a coast: a camp on a wooded ridge, a harbour town with a printing house, a lighthouse with a library, misty uncharted hills, a great wave, and a ship sailing off toward another land">
+      <a class="pin region" style="--x:20.0%;--y:26.8%" href="#now">Now</a>
+      <a class="pin region" style="--x:20.5%;--y:64.5%" href="#writing">Writing</a>
+      <a class="pin region" style="--x:54.0%;--y:57.7%" href="#reading">Reading</a>
+      <a class="pin region" style="--x:88.6%;--y:54.2%" href="#about">About me</a>
+      <a class="pin region" style="--x:70.1%;--y:75.8%" href="#i-and-ai">I And AI</a>
     </div>
   </div>
   <p class="map-hint">Each place on the map is a link. Swipe to see the whole coast.</p>
