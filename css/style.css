@@ -91,7 +91,7 @@
 html {
   background: var(--bg);
   scroll-behavior: smooth;
-  scroll-padding-top: 16px;
+  scroll-padding-top: 76px;  /* clears the pinned top bar */
   scrollbar-color: var(--edge) var(--bg);
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -163,16 +163,25 @@ img { max-width: 100%; height: auto; }
 [data-theme="light"] .backdrop.faint::after { display: none; }
 [data-theme="light"] .backdrop.faint img { opacity: 0.3; }
 .topbar, main, footer, .road { position: relative; z-index: 1; }
-/* the foot: Nhat's long night road by day, the dusk shoreline by night */
-[data-theme="dark"] .road { background-image: url("../images/art/shore-strip.webp"); }
+/* the foot: Nhat's long night road by day, the dusk shoreline by night (below) */
 
 .road {
   height: clamp(90px, 15vw, 220px);
   margin-top: 28px;
-  background: url("../images/art/long-road.webp") center 45% / cover no-repeat;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
   mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 75%, transparent);
 }
+/* two layers, so switching theme crossfades the road into the shoreline */
+.road::before, .road::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/art/long-road.webp") center 45% / cover no-repeat;
+  transition: opacity 1.2s ease;
+}
+.road::after { background-image: url("../images/art/shore-strip.webp"); opacity: 0; }
+[data-theme="dark"] .road::before { opacity: 0; }
+[data-theme="dark"] .road::after { opacity: 1; }
 
 .section-head .stamp { width: 40px; height: 40px; flex: none; align-self: center; }
 
@@ -319,7 +328,8 @@ html { overflow-x: clip; }
 /* --------------------------------------------------------------- top bar */
 
 /* a solid band, so the links read over the pictures behind the page top */
-.topbar { background: rgb(var(--wash) / 0.86); border-bottom: 1px solid var(--edge); }
+/* pinned to the top while the page scrolls, so the theme switch is always in reach */
+.topbar { position: sticky; top: 0; z-index: 30; background: rgb(var(--wash) / 0.86); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--edge); }
 .topbar .container {
   display: flex;
   flex-wrap: wrap;
@@ -686,7 +696,7 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card, .portrait img, .list a, .mini, .mini img, .pin, .map img.map-night { transition: none; }
+  .card, .portrait img, .list a, .mini, .mini img, .pin, .map img.map-night, .road::before, .road::after { transition: none; }
   .pin:hover { transform: translate(-50%, -54%); }
   a.card:hover, a.mini:hover, a.mini:hover img { transform: none; }
   .glow { animation: none; opacity: 0.4; }
